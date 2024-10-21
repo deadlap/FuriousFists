@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
+
 public class Hand_Animation_Handler : MonoBehaviour {
     public InputActionProperty ClenchInput;
 
@@ -10,7 +11,7 @@ public class Hand_Animation_Handler : MonoBehaviour {
 
     void Update() {
         float clenchValue = ClenchInput.action.ReadValue<float>();
-        HandAnimator.SetFloat("Clench", clenchValue);
+        HandAnimator.SetFloat("Bumper1", clenchValue);
     }
 
 }
