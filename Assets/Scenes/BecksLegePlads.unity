@@ -445,7 +445,7 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 0
-  body: {fileID: 0}
+  body: {fileID: 896043880}
   otherFoot: {fileID: 63782999}
   speed: 4
   stepDistance: 0.2
