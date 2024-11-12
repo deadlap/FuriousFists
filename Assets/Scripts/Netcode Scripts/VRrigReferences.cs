@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class VRrigReferences : MonoBehaviour
 {
-
+    public Transform body;
     public Transform root;
     public Transform head;
     public Transform lHand;
