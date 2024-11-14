@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2716,7 +2716,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1763960716
@@ -2859,6 +2859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3763103729925028465, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
+      propertyPath: footYPosOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763103729925028465, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
       propertyPath: footRotOffset.x
       value: -120
       objectReference: {fileID: 0}
@@ -2895,6 +2900,11 @@ PrefabInstance:
     - target: {fileID: 5109325011031681552, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559162068960427606, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: footYPosOffset
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5559162068960427606, guid: a20b26c4f596260418b6b7c7ee79d1ab,
