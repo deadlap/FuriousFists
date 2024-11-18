@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class WallChanger : MonoBehaviour
 {
-    public GameObject newObjectPrefab;  
-    private bool hasCollidedOnce = false;  
+    
     public float knockbackForce = 10f;
 
 
@@ -21,7 +20,7 @@ public class WallChanger : MonoBehaviour
     private void ChangeObject()
     {
     
-        GameObject newObject = Instantiate(newObjectPrefab, transform.position, transform.rotation);
+      
 
       
       
@@ -42,7 +41,7 @@ public class WallChanger : MonoBehaviour
 
           
             rb.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
-            Debug.Log("Knockback applied!");
+            
         }
       
     }
