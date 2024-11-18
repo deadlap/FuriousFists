@@ -4,34 +4,46 @@ using UnityEngine;
 
 public class WallChanger : MonoBehaviour
 {
-    public GameObject newObjectPrefab;  // Prefab to replace the current object
-    private bool hasCollidedOnce = false;  // Tracks if the object has already collided once
+    public GameObject newObjectPrefab;  
+    private bool hasCollidedOnce = false;  
+    public float knockbackForce = 10f;
+
+
+   
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the object has already collided once
-        if (!hasCollidedOnce)
-        {
-            // First collision: Change the object
-            ChangeObject();
-            hasCollidedOnce = true;
-        }
-        else
-        {
-            // Second collision: Remove the object
-            Destroy(gameObject);
-        }
+        ApplyKnockback(collision);
+
+        Destroy(gameObject);
     }
 
     private void ChangeObject()
     {
-        // Instantiate the new object at the current object's position and rotation
+    
         GameObject newObject = Instantiate(newObjectPrefab, transform.position, transform.rotation);
 
-        // Optionally, copy over the scale of the current object
-        newObject.transform.localScale = transform.localScale;
+      
+      
 
-        // Destroy the current object
+      
         Destroy(gameObject);
+    }
+
+    private void ApplyKnockback(Collision collision)
+    {
+        
+        Rigidbody rb = collision.rigidbody;
+
+        if (rb != null)
+        {
+            
+            Vector3 knockbackDirection = (collision.transform.position - transform.position).normalized;
+
+          
+            rb.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
+            Debug.Log("Knockback applied!");
+        }
+      
     }
 }
