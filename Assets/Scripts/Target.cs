@@ -7,24 +7,27 @@ public class Target : MonoBehaviour {
     // void Awake(){
     //     character = GetComponent<Character>();
     // }
-
+    [SerializeField] float DamageReduction;
+    [SerializeField] float KnockbackReduction;
     void Update() {
         
     }
 
     public void TakeHit(Vector3 knockback, float damage){
         if (character != null) {
-            character.ApplyHit(knockback, damage);
+            TakeHit(knockback);
+            TakeHit(damage);
+            // character.ApplyHit(knockback, damage*DamageReduction);
         }
     }
     public void TakeHit(Vector3 knockback){
         if (character != null) {
-            character.ApplyKnockBack(knockback);
+            character.ApplyKnockBack(knockback*KnockbackReduction);
         }
     }
     public void TakeHit(float damage){
         if (character != null) {
-            character.ApplyDamage(damage);
+            character.ApplyDamage(damage*DamageReduction);
         }
     }
 }
