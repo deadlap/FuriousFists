@@ -10,7 +10,6 @@ public class networkPlayer : NetworkBehaviour
     [SerializeField] private Transform head;
     [SerializeField] private Transform lHand;
     [SerializeField] private Transform rHand;
-    [SerializeField] private Transform body;
 
 
     private NetworkVariable<int> score = new NetworkVariable<int>();
@@ -47,8 +46,7 @@ public class networkPlayer : NetworkBehaviour
             rHand.position = VRrigReferences.singleTon.rHAnd.position;
             rHand.rotation = VRrigReferences.singleTon.rHAnd.rotation;
 
-            body.position = VRrigReferences.singleTon.body.position;
-            body.rotation = VRrigReferences.singleTon.body.rotation;
+
 
 
         }
