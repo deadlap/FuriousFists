@@ -22,12 +22,12 @@ public class Target : MonoBehaviour {
     }
     public void TakeHit(Vector3 knockback){
         if (character != null) {
-            character.ApplyKnockBack(knockback*KnockbackReduction);
+            character.ApplyKnockBack(knockback*(1-KnockbackReduction));
         }
     }
     public void TakeHit(float damage){
         if (character != null) {
-            character.ApplyDamage(damage*DamageReduction);
+            character.ApplyDamage(damage*(1-DamageReduction));
         }
     }
 }
