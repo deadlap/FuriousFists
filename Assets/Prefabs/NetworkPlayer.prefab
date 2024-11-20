@@ -1192,6 +1192,26 @@ PrefabInstance:
       propertyPath: head.trackingPositionOffset.z
       value: -0.59
       objectReference: {fileID: 0}
+    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: leftHand.trackingRotationOffset.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: leftHand.trackingRotationOffset.z
+      value: 98.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: rightHand.trackingRotationOffset.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: rightHand.trackingRotationOffset.z
+      value: -98.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5251342596711247231, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
       propertyPath: m_Controller
