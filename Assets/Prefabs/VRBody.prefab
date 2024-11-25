@@ -345,8 +345,8 @@ MonoBehaviour:
   sideStepLength: 0.1
   stepHeight: 0.3
   footOffset: {x: 0, y: 0, z: 0}
-  footRotOffset: {x: 0, y: 0, z: 0}
-  footYPosOffset: 0.1
+  footRotOffset: {x: -120, y: 180, z: 0}
+  footYPosOffset: 0
   rayStartYOffset: 0
   rayLength: 1.5
 --- !u!1 &5148580008045409344
@@ -547,8 +547,8 @@ MonoBehaviour:
   sideStepLength: 0.1
   stepHeight: 0.3
   footOffset: {x: 0, y: 0, z: 0}
-  footRotOffset: {x: 0, y: 0, z: 0}
-  footYPosOffset: 0.1
+  footRotOffset: {x: -120, y: 180, z: 0}
+  footYPosOffset: 0
   rayStartYOffset: 0
   rayLength: 1.5
 --- !u!1 &6022604576611875950
@@ -1652,17 +1652,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ed6a664e422c891499baa9e3d297cd9b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ed6a664e422c891499baa9e3d297cd9b,
+        type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.549891
+      value: -0.60353065
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
