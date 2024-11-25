@@ -913,10 +913,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: f41e240b-7d9c-4ae8-92b6-8947f8828d15
+  cloudProjectId: 36f396fe-5338-4f3a-bf2d-bb1e323106b2
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: FuriousFists (1)
+  projectName: FuriousFists
   organizationId: lucasabildgaard
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

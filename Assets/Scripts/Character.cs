@@ -6,13 +6,10 @@ public class Character : MonoBehaviour {
 
     [SerializeField] float MaxHealth;
     [SerializeField] float Health;
-
-    // public HealthBar healthbar;
-
     [SerializeField] CharacterController PlayerCharacterController;
+    // [SerializeField] Rigidbody PlayerRigidbody;
     [SerializeField] GameObject OwnXROrigin;
     [SerializeField] Vector3 KnockBackVector;
-    // [SerializeField]
     [SerializeField] float KnockbackSmoothness;
 
     public float AttackCooldown; //per hand.
@@ -23,39 +20,38 @@ public class Character : MonoBehaviour {
     
     void Start() {
         Health = MaxHealth;
-        // healthbar.SetHealth(MaxHealth);
         if (OwnXROrigin == null) {
             OwnXROrigin = GameObject.FindWithTag("Player");
-            PlayerCharacterController = OwnXROrigin.GetComponent<CharacterController>();
-        } else {
-            PlayerCharacterController = GetComponent<CharacterController>();
+            // PlayerCharacterController = OwnXROrigin.GetComponent<CharacterController>();
+            // PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
         }
+        //  else {
+            // PlayerRigidbody = GetComponent<Rigidbody>();
+        // }
+        PlayerCharacterController = OwnXROrigin.GetComponent<CharacterController>();
         KnockBackVector = Vector3.zero;
     }
 
     void Update() {
-        if (Health > MaxHealth)
-        {
+        if (Health > MaxHealth) {
             Health = MaxHealth;
         }
         KnockBackVector = Vector3.Lerp(KnockBackVector, Vector3.zero, Time.deltaTime*KnockbackSmoothness);
-        PlayerCharacterController.Move(Time.deltaTime*KnockBackVector);
-
-        // if (Input.GetKeyDown(KeyCode.Space)) {
-        //     Debug.Log("heff");
-        //     ApplyDamage(20); }
+        KnockBackVector = new Vector3(KnockBackVector.x, 0, KnockBackVector.z);
+        // PlayerRigidbody.AddForce(KnockBackVector);
     }
 
     public void ApplyHit(Vector3 knockback, float damage) {
         ApplyDamage(damage);
         ApplyKnockBack(knockback*DamageToKnockbackRatio*damage);
     }
+
     public void ApplyKnockBack(Vector3 knockback) {
         KnockBackVector += knockback;
+        // PlayerRigidbody.AddForce(knockback);
+        
     }
     public void ApplyDamage(float damage){
         Health -= damage;
-        // healthbar.SetHealth(Health);
-        // Debug.Log("Health: " + health + " Armor: " + armor);
     }
 }
