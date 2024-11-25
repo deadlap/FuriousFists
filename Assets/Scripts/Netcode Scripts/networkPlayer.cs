@@ -10,7 +10,7 @@ public class networkPlayer : NetworkBehaviour
     [SerializeField] private Transform head;
     [SerializeField] private Transform lHand;
     [SerializeField] private Transform rHand;
-
+    [SerializeField] private Animator animator;
 
     private NetworkVariable<int> score = new NetworkVariable<int>();
 
@@ -25,6 +25,7 @@ public class networkPlayer : NetworkBehaviour
             VRrigReferences.singleTon.setNetworkPlayer(this);
         }
         score.OnValueChanged += scoreChanged;
+        DisableClientInputs();
     }
 
 
@@ -49,6 +50,17 @@ public class networkPlayer : NetworkBehaviour
 
 
 
+        }
+    }
+
+    public void DisableClientInputs()
+    {
+        if (IsClient && !IsHost)
+        {
+            var clientCamera = GetComponentInChildren<Camera>();
+
+            clientCamera.enabled = false;
+            animator.enabled = false;
         }
     }
 
