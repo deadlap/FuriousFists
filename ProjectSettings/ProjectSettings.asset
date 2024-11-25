@@ -156,7 +156,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.UnityTechnologies.com.unity.template.urpblank
+    Android: com.DefaultCompany.FuriousFists
     Standalone: com.Unity-Technologies.com.unity.template.urp-blank
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
@@ -164,7 +164,7 @@ PlayerSettings:
     VisionOS: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 1
+  overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 0
@@ -913,10 +913,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 36f396fe-5338-4f3a-bf2d-bb1e323106b2
+  cloudProjectId: f41e240b-7d9c-4ae8-92b6-8947f8828d15
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: FuriousFists
+  projectName: FuriousFists (1)
   organizationId: lucasabildgaard
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
