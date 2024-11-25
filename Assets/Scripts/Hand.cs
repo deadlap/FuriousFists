@@ -46,7 +46,6 @@ public class Hand : MonoBehaviour {
             return;
         }
         if (other.CompareTag("Target")) {
-            Debug.Log("hit");
             Vector3 hitVector = transform.position - PositionList[PositionList.Count-1];
             other.gameObject.GetComponent<Target>().TakeHit(hitVector.normalized, MaxDamage);
             startVibra();

@@ -15,14 +15,14 @@ public class Target : MonoBehaviour {
 
     public void TakeHit(Vector3 knockback, float damage){
         if (character != null) {
-            TakeHit(knockback);
-            TakeHit(damage);
-            // character.ApplyHit(knockback, damage*DamageReduction);
+            // TakeHit(knockback);
+            // TakeHit(damage);
+            character.ApplyHit(knockback*(1-KnockbackReduction), damage*(1-DamageReduction));
         }
     }
     public void TakeHit(Vector3 knockback){
         if (character != null) {
-            character.ApplyKnockBack(knockback*(1-KnockbackReduction));
+            character.ApplyPureKnockBack(knockback*(1-KnockbackReduction));
         }
     }
     public void TakeHit(float damage){
