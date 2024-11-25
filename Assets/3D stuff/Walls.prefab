@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8661550149973813927}
   - component: {fileID: 5266906822327600554}
   - component: {fileID: 6451670000865269930}
-  - component: {fileID: 432389853378755448}
+  - component: {fileID: 8906625370580806802}
   m_Layer: 0
   m_Name: StoneFence
   m_TagString: Untagged
@@ -132,10 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdf2857763b20e44b519318779b09b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newObjectPrefab: {fileID: 0}
   knockbackForce: 10
---- !u!64 &432389853378755448
-MeshCollider:
+--- !u!65 &8906625370580806802
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -152,10 +151,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 516726778918691421, guid: 4dfaf609e115ea040bf19d5892621728, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.1785176, y: 0.26329792, z: 0.025954574}
+  m_Center: {x: 0.005908386, y: -0.032601304, z: 0.0006636716}
 --- !u!1 &4716617542367220006
 GameObject:
   m_ObjectHideFlags: 0
