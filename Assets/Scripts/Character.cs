@@ -27,11 +27,14 @@ public class Character : MonoBehaviour {
             OwnXROrigin = GameObject.FindWithTag("Player");
             if (GetComponent<NetworkObject>().NetworkObjectId == 1){
                 SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
+                SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player1"));
             } if (GetComponent<NetworkObject>().NetworkObjectId == 2){
                 SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player2"));
+                SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player2"));
             }
         }
         PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
+        
         KnockBackVector = Vector3.zero;
     }
 
