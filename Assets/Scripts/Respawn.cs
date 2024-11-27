@@ -13,6 +13,7 @@ public class Respawn : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Teleport();
+        SetActive();
     }
 
      private void Teleport()
@@ -25,7 +26,13 @@ public class Respawn : MonoBehaviour
     }
 
     private void SetActive()
-    { 
-    gameObject.SetActive(true);
+    {
+        foreach (GameObject go in gameObjects)
+        {
+            if (go != null)
+            {
+                go.SetActive(true);
+            }
+        }
     }
 }

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6386484608294827866}
+  - component: {fileID: 6754064758210276692}
+  - component: {fileID: 5723850217081056272}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -33,6 +35,40 @@ Transform:
   - {fileID: 5001752287107841178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6754064758210276692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974399166889940638}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 182.74759, y: 50, z: 15}
+  m_Center: {x: 3.2741547, y: 0, z: 0}
+--- !u!114 &5723850217081056272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974399166889940638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdf2857763b20e44b519318779b09b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 10
 --- !u!1 &2336177480897109567
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,8 +80,6 @@ GameObject:
   - component: {fileID: 4836843977452406694}
   - component: {fileID: 8661550149973813927}
   - component: {fileID: 5266906822327600554}
-  - component: {fileID: 6451670000865269930}
-  - component: {fileID: 8906625370580806802}
   m_Layer: 0
   m_Name: StoneFence
   m_TagString: Untagged
@@ -120,40 +154,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6451670000865269930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336177480897109567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdf2857763b20e44b519318779b09b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackForce: 10
---- !u!65 &8906625370580806802
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336177480897109567}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.1785176, y: 0.26329792, z: 0.025954574}
-  m_Center: {x: 0.005908386, y: -0.032601304, z: 0.0006636716}
 --- !u!1 &4716617542367220006
 GameObject:
   m_ObjectHideFlags: 0
