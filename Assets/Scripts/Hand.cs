@@ -29,16 +29,14 @@ public class Hand : MonoBehaviour {
     }
 
     void Update() {
-        // PositionList.Add((transform.InverseTransformPoint(Camera.main.transform.position)));
         PositionList.Add(transform.position);
         if (CurrentCooldown > 0) {
             CurrentCooldown -= Time.deltaTime;
         }
         if (PositionList.Count > ListLength){
             PositionList = PositionList.GetRange(1, PositionList.Count-1);
-            Debug.Log(gameObject.name);
-            Debug.Log("Distance: " + (transform.position - PositionList[PositionList.Count-1]).magnitude);
-            Debug.Log("Average: " + CalculateAverage(PositionList)/(PositionList.Count-1));
+            // Debug.Log(CalculateAverage(PositionList)/(PositionList.Count-1));
+            // Debug.Log(PositionList);
         }
     }
     
@@ -48,7 +46,6 @@ public class Hand : MonoBehaviour {
             return;
         }
         if (other.CompareTag("Target")) {
-            CurrentCooldown = AttackCooldown;
             Vector3 hitVector = transform.position - PositionList[PositionList.Count-1];
             other.gameObject.GetComponent<Target>().TakeHit(hitVector.normalized, MaxDamage);
             startVibra();
