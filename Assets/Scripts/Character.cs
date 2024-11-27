@@ -28,7 +28,7 @@ public class Character : MonoBehaviour {
             if (GetComponent<NetworkObject>().NetworkObjectId == 1){
                 SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
             } if (GetComponent<NetworkObject>().NetworkObjectId == 2){
-                SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
+                SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player2"));
             }
         }
         PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
