@@ -833,13 +833,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-<<<<<<< Updated upstream
   m_Size: {x: 0.1, y: 0.25, z: 0.1}
   m_Center: {x: 0, y: 0.075, z: 0}
-=======
-  m_Size: {x: 0.1, y: 0.15, z: 0.05}
-  m_Center: {x: 0, y: 0.05, z: 0}
->>>>>>> Stashed changes
 --- !u!114 &691046808170678430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1608,76 +1603,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2021101128803024742, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
       insertIndex: -1
-<<<<<<< Updated upstream
-=======
-      addedObject: {fileID: 115937118356330378}
-    - targetCorrespondingSourceObject: {fileID: 3395732914167248555, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8695927869609344586}
-    - targetCorrespondingSourceObject: {fileID: 3395732914167248555, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 662880837117339164}
-    - targetCorrespondingSourceObject: {fileID: 9053908606255101818, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1437095885959187993}
-    - targetCorrespondingSourceObject: {fileID: 9053908606255101818, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9116026947901775020}
-    - targetCorrespondingSourceObject: {fileID: 2334254521315705579, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2072306859413358796}
-    - targetCorrespondingSourceObject: {fileID: 2334254521315705579, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8310400166797522290}
-    - targetCorrespondingSourceObject: {fileID: 5713448886798952724, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
->>>>>>> Stashed changes
       addedObject: {fileID: 7818179491452897868}
     - targetCorrespondingSourceObject: {fileID: 5713448886798952724, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
       insertIndex: -1
-<<<<<<< Updated upstream
-=======
-      addedObject: {fileID: 5565490041523260622}
-    - targetCorrespondingSourceObject: {fileID: 5713448886798952724, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9185172944744691010}
-    - targetCorrespondingSourceObject: {fileID: 2877261077023432487, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5124336600104879773}
-    - targetCorrespondingSourceObject: {fileID: 2877261077023432487, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7251746349241313032}
-    - targetCorrespondingSourceObject: {fileID: 3572789526634110186, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2323866328517290225}
-    - targetCorrespondingSourceObject: {fileID: 3572789526634110186, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5327033975517531819}
-    - targetCorrespondingSourceObject: {fileID: 1285487417335631456, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6133028081373569228}
-    - targetCorrespondingSourceObject: {fileID: 1285487417335631456, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7712348939615635400}
-    - targetCorrespondingSourceObject: {fileID: 4575476374336876911, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      insertIndex: -1
->>>>>>> Stashed changes
       addedObject: {fileID: 1996864324670771242}
     - targetCorrespondingSourceObject: {fileID: 4575476374336876911, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
