@@ -6,27 +6,17 @@ public class WallChanger : MonoBehaviour
 {
     
     public float knockbackForce = 10f;
-
-
-   
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         ApplyKnockback(collision);
-
-        Destroy(gameObject);
+        ChangeObject();
+ 
     }
 
     private void ChangeObject()
     {
-    
-      
-
-      
-      
-
-      
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void ApplyKnockback(Collision collision)
