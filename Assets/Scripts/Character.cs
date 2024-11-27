@@ -9,8 +9,12 @@ public class Character : MonoBehaviour {
 
     [SerializeField] float MaxHealth;
     [SerializeField] float Health;
+<<<<<<< Updated upstream
     // [SerializeField] CharacterController PlayerCharacterController;
     [SerializeField] Rigidbody PlayerRigidbody;
+=======
+    [SerializeField] CharacterController PlayerCharacterController;
+>>>>>>> Stashed changes
     [SerializeField] GameObject OwnXROrigin;
     [SerializeField] Vector3 KnockBackVector;
     [SerializeField] float KnockbackSmoothness;
