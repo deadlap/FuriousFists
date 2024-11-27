@@ -29,16 +29,9 @@ public class Character : MonoBehaviour {
                 SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
             } if (GetComponent<NetworkObject>().NetworkObjectId == 2){
                 SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
-                
             }
-            // PlayerCharacterController = OwnXROrigin.GetComponent<CharacterController>();
-            // PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
         }
-        //  else {
-            // PlayerRigidbody = GetComponent<Rigidbody>();
-        // }
         PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
-        // PlayerCharacterController = OwnXROrigin.GetComponent<CharacterController>();
         KnockBackVector = Vector3.zero;
     }
 
@@ -46,10 +39,6 @@ public class Character : MonoBehaviour {
         if (Health > MaxHealth) {
             Health = MaxHealth;
         }
-        // KnockBackVector = Vector3.Lerp(KnockBackVector, Vector3.zero, Time.deltaTime*KnockbackSmoothness);
-        // KnockBackVector = new Vector3(KnockBackVector.x, 0, KnockBackVector.z);
-        // PlayerCharacterController.Move(KnockBackVector);
-        // PlayerRigidbody.AddForce(KnockBackVector);
     }
 
     public void ApplyHit(Vector3 knockback, float damage) {
@@ -58,11 +47,10 @@ public class Character : MonoBehaviour {
     }
 
     public void ApplyPureKnockBack(Vector3 knockback) {
-        // KnockBackVector += knockback;
-        Debug.Log("hit: "+knockback);
+        Debug.Log("hit: "+ knockback);
         PlayerRigidbody.AddForce(knockback);
-        
     }
+
     public void ApplyDamage(float damage){
         Health -= damage;
     }
