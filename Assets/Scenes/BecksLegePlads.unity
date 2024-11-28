@@ -707,9 +707,14 @@ MonoBehaviour:
   OwnXROrigin: {fileID: 0}
   KnockBackVector: {x: 0, y: 0, z: 0}
   KnockbackSmoothness: 0
+  LeftFakeHand: {fileID: 0}
+  RightFakeHand: {fileID: 0}
+  LeftHand: {fileID: 0}
+  RightHand: {fileID: 0}
   AttackCooldown: 0
   MaxKnockback: 0
   MaxSpeed: 0
+  MinSpeed: 0
   MaxDamage: 0
   DamageToKnockbackRatio: 0
 --- !u!1 &325645636
@@ -1725,12 +1730,6 @@ Transform:
   - {fileID: 1335449795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &754985178 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4209102417061151915, guid: 9619322aa086b6244976e0df591f3f04,
-    type: 3}
-  m_PrefabInstance: {fileID: 3968832472583198405}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &758023232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,9 +2182,14 @@ MonoBehaviour:
   OwnXROrigin: {fileID: 899787036}
   KnockBackVector: {x: 0, y: 0, z: 0}
   KnockbackSmoothness: 0
+  LeftFakeHand: {fileID: 0}
+  RightFakeHand: {fileID: 0}
+  LeftHand: {fileID: 0}
+  RightHand: {fileID: 0}
   AttackCooldown: 1
   MaxKnockback: 3
   MaxSpeed: 3
+  MinSpeed: 0
   MaxDamage: 10
   DamageToKnockbackRatio: 1
 --- !u!65 &899787043
@@ -3596,6 +3600,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 758023234}
+  character: {fileID: 0}
 --- !u!114 &1378610322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4792,6 +4797,89 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!33 &1221983715142506458
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175407788236915397}
+  m_Mesh: {fileID: -462981019419857548, guid: 28f59a5175fb49348a44ee0ecee44092, type: 3}
+--- !u!4 &2835719806021179519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175407788236915397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7688421, y: 3.87, z: -7.478527}
+  m_LocalScale: {x: 100000, y: 1, z: 100000}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3175407788236915397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2835719806021179519}
+  - component: {fileID: 1221983715142506458}
+  - component: {fileID: 3968142957981295376}
+  m_Layer: 0
+  m_Name: SkyBoxFUnny
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &3968142957981295376
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175407788236915397}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e52b1a5c70fafbd44a34ba9380591c4b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &3968832472583198405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4917,7 +5005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84313169b7fe94a49804306424372d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthUI: {fileID: 754985178}
+  ArmHealth: {fileID: 0}
+  AboveHeadHealth: {fileID: 0}
 --- !u!114 &3968832472583198408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4948,3 +5037,4 @@ SceneRoots:
   - {fileID: 3968832472583198405}
   - {fileID: 899787046}
   - {fileID: 728263817}
+  - {fileID: 2835719806021179519}
