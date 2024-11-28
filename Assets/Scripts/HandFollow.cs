@@ -6,7 +6,7 @@ using UnityEngine;
 public class HandFollow : MonoBehaviour {
     // Start is called before the first frame update
     [SerializeField] GameObject HandToFollow;
-     
+    
     void Start() {
         
     }
