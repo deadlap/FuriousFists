@@ -15,8 +15,6 @@ public class Target : MonoBehaviour {
     }
 
     public void TakeHit(Vector3 knockback, float damage){
-        UnityEngine.Debug.Log("dmg: " + damage);
-        UnityEngine.Debug.Log("knockback: " + knockback);
         if (character != null) {
             // TakeHit(knockback);
             // TakeHit(damage);

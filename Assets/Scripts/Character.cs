@@ -23,6 +23,10 @@ public class Character : MonoBehaviour {
     
     void Start() {
         Health = MaxHealth;
+        if (OwnXROrigin != null) {
+            PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
+            return;
+        }
         if (GetComponent<NetworkObject>().NetworkObjectId == 1){
             OwnXROrigin = GameObject.FindWithTag("Player1");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
@@ -31,7 +35,6 @@ public class Character : MonoBehaviour {
             OwnXROrigin = GameObject.FindWithTag("Player2");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player2"));
             SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player2"));
-        // }
         }
         PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
         
