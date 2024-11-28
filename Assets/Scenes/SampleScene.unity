@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1203967089}
-  m_MoveSpeed: 3
+  m_MoveSpeed: 1.8
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 0
@@ -3947,6 +3947,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 1498409405}
+  character: {fileID: 0}
 --- !u!114 &1974247275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6109,8 +6110,8 @@ MonoBehaviour:
   RightHand: {fileID: 131285096}
   AttackCooldown: 0.5
   MaxKnockback: 5
-  MaxSpeed: 0.03
-  MinSpeed: 0.016
+  MaxSpeed: 0.028
+  MinSpeed: 0.014
   MaxDamage: 15
   DamageToKnockbackRatio: 25
 --- !u!1660057539 &9223372036854775807

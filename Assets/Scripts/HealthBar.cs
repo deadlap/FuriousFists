@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour
     public Slider healthSlider;
     public Gradient gradient;
     public Image fill;
+    [SerializeField] Character character;
     
     
     public void SetMaxHealth(float health)
