@@ -32,11 +32,11 @@ public class Hand : MonoBehaviour {
     }
 
     void Update() {
-        if (CurrentCooldown > 0) {
-            CurrentCooldown -= Time.deltaTime;
-        } else if (CurrentCooldown < 0) {
-            CurrentCooldown = 0;
-        }
+        // if (CurrentCooldown > 0) {
+        //     CurrentCooldown -= Time.deltaTime;
+        // } else if (CurrentCooldown < 0) {
+        //     CurrentCooldown = 0;
+        // }
 
         HitVector = (transform.position-PreviousPosition).normalized;
         PreviousPosition = transform.position;
@@ -56,12 +56,13 @@ public class Hand : MonoBehaviour {
     
     void OnTriggerEnter(Collider other) {
         Debug.Log("hit:" + other.name);
-        if (CurrentCooldown > 0){
-            return;
-        }
+        // if (CurrentCooldown > 0){
+        //     return;
+        // }
         if (other.CompareTag("Target")) {
             CurrentCooldown = AttackCooldown;
-            float speed = CalculateAverage(PositionList);
+            float speed = Vector3.Distance(PositionList[^2],PositionList[^1]);
+            // CalculateAverage(PositionList);
             if (speed >= MinSpeed) {
                 Debug.Log("Hit: " + HitVector);
                 speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);

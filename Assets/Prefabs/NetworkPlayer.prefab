@@ -2605,7 +2605,7 @@ PrefabInstance:
     - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
       propertyPath: headBodyPositionOffset.x
-      value: -0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
