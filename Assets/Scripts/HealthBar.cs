@@ -11,7 +11,11 @@ public class HealthBar : MonoBehaviour
     [SerializeField] Character character;
     
     void Start(){
-        
+        SetMaxHealth(character.MaxHealth);
+        SetHealth(character.Health);
+    }
+    void Update(){
+        SetHealth(character.Health);
     }
     public void SetMaxHealth(float health)
     {

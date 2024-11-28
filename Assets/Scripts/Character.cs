@@ -7,12 +7,10 @@ using Unity.Netcode;
 
 public class Character : MonoBehaviour {
 
-    [SerializeField] float MaxHealth;
-    [SerializeField] float Health;
+    [SerializeField] public float MaxHealth;
+    [SerializeField] public float Health;
     [SerializeField] Rigidbody PlayerRigidbody;
     [SerializeField] GameObject OwnXROrigin;
-    [SerializeField] Vector3 KnockBackVector;
-    [SerializeField] float KnockbackSmoothness;
     [SerializeField] GameObject LeftFakeHand;
     [SerializeField] GameObject RightFakeHand;
     [SerializeField] Hand LeftHand;
@@ -41,13 +39,14 @@ public class Character : MonoBehaviour {
             SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player2"));
         }
         PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
-        
-        KnockBackVector = Vector3.zero;
     }
 
     void Update() {
         if (Health > MaxHealth) {
             Health = MaxHealth;
+        }
+        if (Health < 0){
+            Health = 0;
         }
         // HitVector = (transform.position-PreviousPosition).normalized;
         // PreviousPosition = transform.position;
