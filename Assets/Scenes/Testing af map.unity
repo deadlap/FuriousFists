@@ -742,7 +742,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &114577879
@@ -805,7 +805,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
   m_LocalPosition: {x: -1446, y: 294, z: 761.4}
-  m_LocalScale: {x: 197.6, y: 1724.7, z: 132.8}
+  m_LocalScale: {x: 197.6, y: 375, z: 132.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425860969}
@@ -1429,7 +1429,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &199235196
@@ -1492,7 +1492,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.61298853, y: 0.61298853, z: 0.3524841, w: 0.3524841}
   m_LocalPosition: {x: -1152.0001, y: 234, z: 52}
-  m_LocalScale: {x: 197.6, y: 1724.7002, z: 108.2}
+  m_LocalScale: {x: 197.6, y: 419, z: 108.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425860969}
@@ -11429,8 +11429,8 @@ Transform:
   m_GameObject: {fileID: 676053711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -448.00003, y: 1558, z: 538}
-  m_LocalScale: {x: 430.4, y: 1760.6, z: 296}
+  m_LocalPosition: {x: -448.00003, y: 1269, z: 538}
+  m_LocalScale: {x: 430.4, y: 650, z: 296}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425860969}
@@ -11454,7 +11454,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &676053714
@@ -16803,7 +16803,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1271423666
@@ -16866,7 +16866,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.53487295, y: -0.53487295, z: 0.4625051, w: 0.4625051}
   m_LocalPosition: {x: -1044.0001, y: 294, z: 1280}
-  m_LocalScale: {x: 197.6, y: 1724.7006, z: 117.7}
+  m_LocalScale: {x: 197.6, y: 112, z: 117.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425860969}
@@ -18847,7 +18847,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1474101199
@@ -18910,7 +18910,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.4005097, y: 0.4005097, z: 0.58274525, w: 0.58274525}
   m_LocalPosition: {x: -448.00003, y: 234, z: -62}
-  m_LocalScale: {x: 197.6, y: 1724.7002, z: 103.5}
+  m_LocalScale: {x: 197.6, y: 712, z: 103.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425860969}
@@ -21447,7 +21447,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -98.2, y: 294, z: 517}
-  m_LocalScale: {x: 197.6, y: 1724.7, z: 136.6}
+  m_LocalScale: {x: 197.6, y: 217.06, z: 136.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425860969}
@@ -21471,7 +21471,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1879200839
@@ -22436,7 +22436,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2069552789
@@ -22499,7 +22499,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.25052157, y: -0.25052157, z: 0.66124046, w: 0.66124046}
   m_LocalPosition: {x: -444.0001, y: 294, z: 1144}
-  m_LocalScale: {x: 197.6, y: 1724.7004, z: 126.5}
+  m_LocalScale: {x: 197.6, y: 131, z: 126.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425860969}
