@@ -9751,6 +9751,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VRBody (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ed6a664e422c891499baa9e3d297cd9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1156334875509381579, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
       propertyPath: m_TagString
@@ -13990,7 +13995,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2807231755144388993, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
