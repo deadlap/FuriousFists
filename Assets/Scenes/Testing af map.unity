@@ -7608,7 +7608,7 @@ GameObject:
   - component: {fileID: 899179851}
   - component: {fileID: 899179850}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7806,14 +7806,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899179849}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 259.4, y: -19.241394, z: -28.598938}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 216.8, y: -19.241394, z: -28.598938}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1517814838}
   m_Father: {fileID: 1437487434}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1001 &922343885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7907,7 +7907,7 @@ GameObject:
   - component: {fileID: 969331958}
   - component: {fileID: 969331957}
   m_Layer: 0
-  m_Name: Player 1 (1)
+  m_Name: 'Player 1 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7921,14 +7921,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969331955}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -247.3, y: -19.241394, z: -28.598938}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -215.3, y: -19.241394, z: -28.598938}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1992907506}
   m_Father: {fileID: 1437487434}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &969331957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10016,6 +10016,7 @@ GameObject:
   - component: {fileID: 1513493806}
   - component: {fileID: 1513493811}
   - component: {fileID: 1513493810}
+  - component: {fileID: 1513493812}
   m_Layer: 0
   m_Name: StartClient
   m_TagString: Untagged
@@ -10277,6 +10278,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1513493812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513493805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abc35d60b3f8bb4cb7f9feb9ed42047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrRig: {fileID: 1203967084}
+  teleportTarget: {fileID: 899179854}
+  player: {fileID: 356323820776658634, guid: 6ab4184c53a581c469135d9ce38ff5da, type: 3}
 --- !u!1 &1517814837
 GameObject:
   m_ObjectHideFlags: 0
@@ -11968,7 +11984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xrRig: {fileID: 1203967084}
-  teleportTarget: {fileID: 899179854}
+  teleportTarget: {fileID: 969331956}
   player: {fileID: 356323820776658634, guid: 6ab4184c53a581c469135d9ce38ff5da, type: 3}
 --- !u!1 &483145449494607137
 GameObject:
