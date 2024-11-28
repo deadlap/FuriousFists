@@ -3138,7 +3138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
   DamageReduction: 0.2
-  KnockbackReduction: 0.1
+  KnockbackReduction: 0
 --- !u!1 &762129731145179232 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2334254521315705579, guid: a20b26c4f596260418b6b7c7ee79d1ab,
@@ -3179,8 +3179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.5
+  DamageReduction: 0.55
+  KnockbackReduction: 0
 --- !u!1 &943861849659112876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2877261077023432487, guid: a20b26c4f596260418b6b7c7ee79d1ab,
@@ -3269,8 +3269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.5
+  DamageReduction: 0.55
+  KnockbackReduction: 0
 --- !u!65 &1282209773738514709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3338,8 +3338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.3
+  DamageReduction: 0.6
+  KnockbackReduction: 0
 --- !u!1 &1973220711689387617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3572789526634110186, guid: a20b26c4f596260418b6b7c7ee79d1ab,
@@ -3360,7 +3360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
   DamageReduction: 0.3
-  KnockbackReduction: 0.2
+  KnockbackReduction: 0
 --- !u!65 &5327033975517531819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3407,8 +3407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.5
+  DamageReduction: 0.6
+  KnockbackReduction: 0
 --- !u!65 &7802927339580612734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3524,8 +3524,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.5
+  DamageReduction: 0.55
+  KnockbackReduction: 0
 --- !u!1 &4592590601192935220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1534452300516715967, guid: a20b26c4f596260418b6b7c7ee79d1ab,
@@ -3600,7 +3600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
   DamageReduction: 0.3
-  KnockbackReduction: 0.2
+  KnockbackReduction: 0
 --- !u!65 &9116026947901775020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3680,8 +3680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.5
+  DamageReduction: 0.55
+  KnockbackReduction: 0
 --- !u!65 &9185172944744691010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3734,8 +3734,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.5
+  DamageReduction: 0.6
+  KnockbackReduction: 0
 --- !u!65 &2438304358754543612
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3797,5 +3797,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.8
-  KnockbackReduction: 0.3
+  DamageReduction: 0.6
+  KnockbackReduction: 0
