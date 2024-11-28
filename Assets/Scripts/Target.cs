@@ -19,6 +19,11 @@ public class Target : MonoBehaviour {
             // TakeHit(knockback);
             // TakeHit(damage);
             character.ApplyHit(knockback*(1-KnockbackReduction), damage*(1-DamageReduction));
+            if (DamageReduction > 0.5){
+                GlobalEffectsSpawner.INSTANCE.SpawnBlockEffect(transform.position);
+            } else {
+                GlobalEffectsSpawner.INSTANCE.SpawnHitEffect(transform.position);
+            }
         }
     }
     public void TakeHit(Vector3 knockback){

@@ -87,7 +87,7 @@ public class Character : MonoBehaviour {
     }
 
     public void ApplyDamage(float damage){
-        Health -= damage;
+        // Health -= damage;
     }
     private void SetGameLayerRecursive(GameObject _gameObject, int layer) {
          _gameObject.layer = layer;
