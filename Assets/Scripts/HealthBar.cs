@@ -10,7 +10,9 @@ public class HealthBar : MonoBehaviour
     public Image fill;
     [SerializeField] Character character;
     
-    
+    void Start(){
+        
+    }
     public void SetMaxHealth(float health)
     {
         healthSlider.maxValue = health;
