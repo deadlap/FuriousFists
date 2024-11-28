@@ -13985,7 +13985,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
       propertyPath: m_Name
-      value: VRBody
+      value: OLDVRBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ed6a664e422c891499baa9e3d297cd9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2807231755144388993, guid: ed6a664e422c891499baa9e3d297cd9b,
         type: 3}
@@ -23132,7 +23137,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.08
   far clip plane: 1000
   field of view: 60
   orthographic: 0
