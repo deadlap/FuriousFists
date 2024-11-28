@@ -77,6 +77,7 @@ public class Character : MonoBehaviour {
     //     }
     // }
     public void ApplyHit(Vector3 knockback, float damage) {
+        Debug.Log("hej"+ gameObject.tag);
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*DamageToKnockbackRatio*damage);
     }
