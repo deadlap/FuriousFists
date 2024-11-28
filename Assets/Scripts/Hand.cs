@@ -29,27 +29,30 @@ public class Hand : MonoBehaviour {
     }
 
     void Update() {
-        // PositionList.Add((transform.InverseTransformPoint(Camera.main.transform.position)));
-        PositionList.Add(transform.position);
+        PositionList.Add((transform.InverseTransformPoint(Camera.main.transform.position)));
+        // PositionList.Add(transform.position);
         if (CurrentCooldown > 0) {
             CurrentCooldown -= Time.deltaTime;
+        } else if (CurrentCooldown < 0) {
+            CurrentCooldown = 0;
         }
+
         if (PositionList.Count > ListLength){
             PositionList = PositionList.GetRange(1, PositionList.Count-1);
             Debug.Log(gameObject.name);
-            Debug.Log("Distance: " + (transform.position - PositionList[PositionList.Count-1]).magnitude);
-            Debug.Log("Average: " + CalculateAverage(PositionList)/(PositionList.Count-1));
+            Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
+            Debug.Log("Average: " + CalculateAverage(PositionList));
         }
     }
     
     void OnTriggerEnter(Collider other) {
         if (CurrentCooldown > 0){
-            Debug.Log("Cooldown");
             return;
         }
         if (other.CompareTag("Target")) {
             CurrentCooldown = AttackCooldown;
-            Vector3 hitVector = transform.position - PositionList[PositionList.Count-1];
+            // if () {}
+            Vector3 hitVector = PositionList[PositionList.Count-1]-PositionList[PositionList.Count-2];
             other.gameObject.GetComponent<Target>().TakeHit(hitVector.normalized, MaxDamage);
             startVibra();
         }
@@ -57,10 +60,10 @@ public class Hand : MonoBehaviour {
 
     float CalculateAverage(List<Vector3> list){
         float sum = 0;
-        for (int i = 0; i == list.Count-2; i++) {
-            sum = Vector3.Distance(list[i], list[i+1]);
+        for (int i = 1; i < list.Count-1; i++) {
+            sum += Vector3.Distance(list[i-1],list[i]);
         }
-        return sum/(float)(list.Count-1);
+        return (sum/(float)(list.Count-1));
     }
     public void startVibra()
     {
