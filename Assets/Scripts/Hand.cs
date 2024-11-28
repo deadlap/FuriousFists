@@ -64,7 +64,6 @@ public class Hand : MonoBehaviour {
     float CalculateAverage(List<Vector3> list){
         float sum = 0;
         for (int i = 1; i < list.Count; i++) {
-            Debug.Log("Plads: " + i + " Distance: " + Vector3.Distance(list[i-1],list[i]));
             sum += Vector3.Distance(list[i-1],list[i]);
         }
         return (sum/(float)(list.Count-1));
