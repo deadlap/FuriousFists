@@ -231,8 +231,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.25, z: 0.1}
-  m_Center: {x: 0, y: 0.075, z: 0}
+  m_Size: {x: 0.1, y: 0.15, z: 0.05}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!114 &24715339615442678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2604,18 +2604,28 @@ PrefabInstance:
       objectReference: {fileID: 3018816948030207103}
     - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
-      propertyPath: headBodyPositionOffset.z
-      value: -0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
-        type: 3}
-      propertyPath: head.trackingPositionOffset.y
+      propertyPath: headBodyPositionOffset.x
       value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
+      propertyPath: headBodyPositionOffset.y
+      value: -0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: headBodyPositionOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: head.trackingPositionOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
       propertyPath: head.trackingPositionOffset.z
-      value: -0.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4057075286970660038, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
@@ -2720,7 +2730,7 @@ PrefabInstance:
     - target: {fileID: 4575476374336876911, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
       propertyPath: m_TagString
-      value: Hand
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 4595103267293680152, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
@@ -2890,7 +2900,7 @@ PrefabInstance:
     - target: {fileID: 5713448886798952724, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
       propertyPath: m_TagString
-      value: Hand
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 5778820430010661376, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
@@ -3786,7 +3796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 0.28
   KnockbackReduction: 0
 --- !u!1 &943861849659112876 stripped
 GameObject:
@@ -3828,8 +3838,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: -0.5
-  KnockbackReduction: -0.5
+  DamageReduction: -1.5
+  KnockbackReduction: -1.5
 --- !u!4 &1169760219992273242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4236904653431165905, guid: a20b26c4f596260418b6b7c7ee79d1ab,
@@ -3876,7 +3886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 0.28
   KnockbackReduction: 0
 --- !u!65 &1282209773738514709
 BoxCollider:
@@ -3893,7 +3903,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3966,7 +3976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.3
+  DamageReduction: 0.26
   KnockbackReduction: 0
 --- !u!65 &5327033975517531819
 BoxCollider:
@@ -4131,7 +4141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 0.28
   KnockbackReduction: 0
 --- !u!1 &4592590601192935220 stripped
 GameObject:
@@ -4206,7 +4216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.3
+  DamageReduction: 0.26
   KnockbackReduction: 0
 --- !u!65 &9116026947901775020
 BoxCollider:
@@ -4287,7 +4297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 0.28
   KnockbackReduction: 0
 --- !u!65 &9185172944744691010
 BoxCollider:
@@ -4304,7 +4314,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
