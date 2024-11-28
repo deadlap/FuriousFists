@@ -11,20 +11,17 @@ public class Hand : MonoBehaviour {
     public List<Vector3> PositionList;
     [SerializeField] Character character;
     public int ListLength;
-    [SerializeField] float MaxKnockback;
-    [SerializeField] float MaxSpeed;
-    [SerializeField] float MinSpeed;
-    [SerializeField] float MaxDamage;
-    [SerializeField] float AttackCooldown;
-    [SerializeField] float CurrentCooldown;
-    [SerializeField] GameObject RelativeMovementObject;
+    float MaxSpeed;
+    float MinSpeed;
+    float MaxDamage;
+    float AttackCooldown;
+    float CurrentCooldown;
     UnityEngine.XR.HapticCapabilities capabilitiesL;
     Vector3 PreviousPosition;
     Vector3 HitVector;
 
     void Start() {
         PositionList = new List<Vector3>();
-        MaxKnockback = character.MaxKnockback;
         MaxSpeed = character.MaxSpeed;
         MinSpeed = character.MinSpeed;
         MaxDamage = character.MaxDamage;
@@ -46,17 +43,18 @@ public class Hand : MonoBehaviour {
     }
 
     void FixedUpdate(){
-        if (PositionList.Count == 0)
-            return;
-        if (PositionList.Count == ListLength){
-            Debug.Log(gameObject.name);
-            Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
-            Debug.Log("Average: " + CalculateAverage(PositionList));
-        }
+        // if (PositionList.Count == 0)
+        //     return;
+        // if (PositionList.Count == ListLength){
+        //     Debug.Log(gameObject.name);
+        //     Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
+        //     Debug.Log("Average: " + CalculateAverage(PositionList));
+        // }
 
     }
     
     void OnTriggerEnter(Collider other) {
+        Debug.Log("hit:" + other.name);
         if (CurrentCooldown > 0){
             return;
         }

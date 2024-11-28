@@ -30,15 +30,20 @@ public class Character : MonoBehaviour {
             return;
         }
         if (GetComponent<NetworkObject>().NetworkObjectId == 1){
+            if (GameObject.FindWithTag("Player1") == null)
+                return;
             OwnXROrigin = GameObject.FindWithTag("Player1");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
+            PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
             // SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player1"));
         } else {
+            if (GameObject.FindWithTag("Player2") == null)
+                return;
             OwnXROrigin = GameObject.FindWithTag("Player2");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player2"));
+            PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
             // SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player2"));
         }
-        PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
     }
 
     void Update() {
@@ -65,6 +70,13 @@ public class Character : MonoBehaviour {
         }
 
     }
+    
+    // [ClientRpc]
+    // public void ClientRpcApplyHit(Vector3 knockback, float damage, string playerID){
+    //     if (playerID == gameObject.transform.tag){
+    //         ApplyHit(knockback, damage);
+    //     }
+    // }
     public void ApplyHit(Vector3 knockback, float damage) {
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*DamageToKnockbackRatio*damage);

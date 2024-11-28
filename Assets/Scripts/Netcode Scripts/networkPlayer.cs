@@ -25,7 +25,7 @@ public class networkPlayer : NetworkBehaviour
             VRrigReferences.singleTon.setNetworkPlayer(this);
         }
         score.OnValueChanged += scoreChanged;
-        DisableClientInputs();
+        // DisableClientInputs();
     }
 
 
@@ -53,16 +53,16 @@ public class networkPlayer : NetworkBehaviour
         }
     }
 
-    public void DisableClientInputs()
-    {
-        if (IsClient && !IsHost)
-        {
-            var clientCamera = GetComponentInChildren<Camera>();
+    // public void DisableClientInputs()
+    // {
+    //     if (IsClient && !IsHost)
+    //     {
+    //         var clientCamera = GetComponentInChildren<Camera>();
 
-            clientCamera.enabled = false;
-            animator.enabled = false;
-        }
-    }
+    //         clientCamera.enabled = false;
+    //         animator.enabled = false;
+    //     }
+    // }
 
     public void IncrementScore()
     {
