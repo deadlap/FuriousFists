@@ -50,7 +50,7 @@ public class Hand : MonoBehaviour {
         }
         if (other.CompareTag("Target")) {
             CurrentCooldown = AttackCooldown;
-            float speed = Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]);
+            float speed = CalculateAverage(PositionList);
             if (speed >= MinSpeed) {
                 speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);
                 float damage = speed/MaxSpeed*MaxDamage;
