@@ -38,7 +38,7 @@ public class Hand : MonoBehaviour {
         }
 
         if (PositionList.Count > ListLength){
-            PositionList = PositionList.GetRange(1, PositionList.Count-1);
+            PositionList.RemoveAt(0);
             Debug.Log(gameObject.name);
             Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
             Debug.Log("Average: " + CalculateAverage(PositionList));
@@ -61,6 +61,7 @@ public class Hand : MonoBehaviour {
     float CalculateAverage(List<Vector3> list){
         float sum = 0;
         for (int i = 1; i < list.Count-1; i++) {
+            Debug.Log("Plads: " + i + " Distance: " + Vector3.Distance(list[i-1],list[i]));
             sum += Vector3.Distance(list[i-1],list[i]);
         }
         return (sum/(float)(list.Count-1));
