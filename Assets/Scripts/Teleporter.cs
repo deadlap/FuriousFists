@@ -8,10 +8,8 @@ public class Teleporter : MonoBehaviour
     public Transform teleportTarget;
     public Transform player;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-  
-         Teleport();
+    private void OnCollisionEnter(Collision collision) {
+        Teleport();
     }
 
     void Teleport()
