@@ -11,10 +11,10 @@ public class Hand : MonoBehaviour {
     public List<Vector3> PositionList;
     [SerializeField] Character character;
     public int ListLength;
-    [SerializeField]  float MaxKnockback;
-    [SerializeField]  float MaxSpeed;
-    [SerializeField]  float MaxDamage;
-    // float DamageToKnockbackRatio;
+    [SerializeField] float MaxKnockback;
+    [SerializeField] float MaxSpeed;
+    [SerializeField] float MinSpeed;
+    [SerializeField] float MaxDamage;
     [SerializeField] float AttackCooldown;
     [SerializeField] float CurrentCooldown;
     UnityEngine.XR.HapticCapabilities capabilitiesL;
@@ -23,14 +23,13 @@ public class Hand : MonoBehaviour {
         PositionList = new List<Vector3>();
         MaxKnockback = character.MaxKnockback;
         MaxSpeed = character.MaxSpeed;
+        MinSpeed = character.MinSpeed;
         MaxDamage = character.MaxDamage;
         AttackCooldown = character.AttackCooldown;
-        // DamageToKnockbackRatio = character.DamageToKnockbackRatio;
     }
 
     void Update() {
         PositionList.Add((transform.InverseTransformPoint(Camera.main.transform.position)));
-        // PositionList.Add(transform.position);
         if (CurrentCooldown > 0) {
             CurrentCooldown -= Time.deltaTime;
         } else if (CurrentCooldown < 0) {
@@ -51,9 +50,13 @@ public class Hand : MonoBehaviour {
         }
         if (other.CompareTag("Target")) {
             CurrentCooldown = AttackCooldown;
-            // if () {}
-            Vector3 hitVector = PositionList[PositionList.Count-1]-PositionList[PositionList.Count-2];
-            other.gameObject.GetComponent<Target>().TakeHit(hitVector.normalized, MaxDamage);
+            float speed = Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]);
+            if (speed >= MinSpeed) {
+                speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);
+                float damage = speed/MaxSpeed*MaxDamage;
+                Vector3 hitVector = PositionList[PositionList.Count-1]-PositionList[PositionList.Count-2];
+                other.gameObject.GetComponent<Target>().TakeHit(hitVector.normalized, damage);
+            }
             startVibra();
         }
     }
