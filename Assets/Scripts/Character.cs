@@ -18,6 +18,7 @@ public class Character : MonoBehaviour {
     public float AttackCooldown; //per hand.
     public float MaxKnockback;
     public float MaxSpeed;
+    public float MinSpeed;
     public float MaxDamage;
     public float DamageToKnockbackRatio;
     
