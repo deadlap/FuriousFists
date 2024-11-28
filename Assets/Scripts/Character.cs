@@ -17,7 +17,6 @@ public class Character : MonoBehaviour {
     [SerializeField] Hand RightHand;
     
     public float AttackCooldown; //per hand.
-    public float MaxKnockback;
     public float MaxSpeed;
     public float MinSpeed;
     public float MaxDamage;

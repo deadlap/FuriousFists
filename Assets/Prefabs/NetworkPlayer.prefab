@@ -248,13 +248,6 @@ MonoBehaviour:
   PositionList: []
   character: {fileID: 5069687924500909594}
   ListLength: 10
-  MaxKnockback: 3
-  MaxSpeed: 3
-  MinSpeed: 0
-  MaxDamage: 10
-  AttackCooldown: 2
-  CurrentCooldown: 0
-  RelativeMovementObject: {fileID: 0}
 --- !u!54 &6091904733963005450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1147,12 +1140,11 @@ MonoBehaviour:
   RightFakeHand: {fileID: 1391745987713935143}
   LeftHand: {fileID: 691046808170678430}
   RightHand: {fileID: 24715339615442678}
-  AttackCooldown: 1
-  MaxKnockback: 3
-  MaxSpeed: 0.024
-  MinSpeed: 0.0155
+  AttackCooldown: 2
+  MaxSpeed: 0.02
+  MinSpeed: 0.012
   MaxDamage: 15
-  DamageToKnockbackRatio: 25
+  DamageToKnockbackRatio: 35
 --- !u!114 &640035099456005358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,13 +1907,6 @@ MonoBehaviour:
   PositionList: []
   character: {fileID: 5069687924500909594}
   ListLength: 10
-  MaxKnockback: 3
-  MaxSpeed: 3
-  MinSpeed: 0
-  MaxDamage: 10
-  AttackCooldown: 2
-  CurrentCooldown: 0
-  RelativeMovementObject: {fileID: 0}
 --- !u!54 &1575622456738624931
 Rigidbody:
   m_ObjectHideFlags: 0

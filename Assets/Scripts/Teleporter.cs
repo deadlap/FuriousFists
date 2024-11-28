@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    public Transform xrRig;  
+    // public Transform xrRig;
     public Transform teleportTarget;
-    public Transform player;
+    // public Transform player;
 
-    private void OnCollisionEnter(Collision collision) {
-        Teleport();
-    }
+    // private void OnCollisionEnter(Collision collision) {
+    //     Teleport();
+    // }
 
-    void Teleport()
+    public void Teleport(GameObject gameObject)
     {
-        xrRig.position = teleportTarget.position;
-        xrRig.rotation = teleportTarget.rotation;
-        player.position = xrRig.position;
-        player.rotation = xrRig.rotation;
+        gameObject.transform.position = teleportTarget.position;
+        gameObject.transform.rotation = teleportTarget.rotation;
+        // player.position = xrRig.position;
+        // player.rotation = xrRig.rotation;
+
 
     }
 }
