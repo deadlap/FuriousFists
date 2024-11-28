@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroySelf : MonoBehaviour {
     // Start is called before the first frame update
     void Start(){
-        Invoke("DeleteMe",5f);
+        Invoke("DeleteMe",0.5f);
     }
 
     // Update is called once per frame
