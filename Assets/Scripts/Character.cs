@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
 using Unity.Netcode;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class Character : MonoBehaviour {
 
@@ -78,8 +79,14 @@ public class Character : MonoBehaviour {
     // }
     public void ApplyHit(Vector3 knockback, float damage) {
         Debug.Log("hej"+ gameObject.tag);
+        OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = false;
+        Invoke("EnableMovement", 1f);
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*DamageToKnockbackRatio*damage);
+    }
+
+    void EnableMovement(){
+        OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = true;
     }
 
     public void ApplyPureKnockBack(Vector3 knockback) {

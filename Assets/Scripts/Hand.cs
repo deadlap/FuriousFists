@@ -69,7 +69,7 @@ public class Hand : MonoBehaviour {
                 other.gameObject.GetComponent<Target>().TakeHit(HitVector, damage);
                 startVibra();
             }
-            if (other.gameObject.GetComponent<Target>().DamageReduction >    0.5){
+            if (other.gameObject.GetComponent<Target>().DamageReduction > 0.4){
                 Instantiate(BlockEffect, transform);
             } else {
                 Instantiate(HitEffect, transform);
