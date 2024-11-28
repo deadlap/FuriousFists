@@ -22,6 +22,7 @@ public class Character : MonoBehaviour {
     public float MinSpeed;
     public float MaxDamage;
     public float DamageToKnockbackRatio;
+    bool DisableInput;
     
     void Start() {
         Health = MaxHealth;
@@ -53,6 +54,11 @@ public class Character : MonoBehaviour {
         if (Health < 0){
             Health = 0;
         }
+        if (DisableInput) {
+            DisableInput = false;
+            Invoke("EnableMovement", 1.5f);
+            OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = false;
+        }
         // HitVector = (transform.position-PreviousPosition).normalized;
         // PreviousPosition = transform.position;
     }
@@ -79,8 +85,7 @@ public class Character : MonoBehaviour {
     // }
     public void ApplyHit(Vector3 knockback, float damage) {
         Debug.Log("hej"+ gameObject.tag);
-        OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = false;
-        Invoke("EnableMovement", 1f);
+        DisableInput = true;
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*DamageToKnockbackRatio*damage);
     }
