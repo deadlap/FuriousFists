@@ -1619,7 +1619,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 8348320845753103475}
-  character: {fileID: 0}
+  character: {fileID: 5069687924500909594}
 --- !u!1 &7558233190877736698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,8 +2284,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603452637029354846, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603452637029354846, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.09
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603452637029354846, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603452637029354846, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6758008025159567590, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
@@ -2459,8 +2474,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9001115076338572283, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001115076338572283, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.09
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001115076338572283, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001115076338572283, guid: a20b26c4f596260418b6b7c7ee79d1ab,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9053908606255101818, guid: a20b26c4f596260418b6b7c7ee79d1ab,
         type: 3}

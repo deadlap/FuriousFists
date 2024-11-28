@@ -30,6 +30,7 @@ public class Hand : MonoBehaviour {
         MaxDamage = character.MaxDamage;
         AttackCooldown = character.AttackCooldown;
         HitVector = Vector3.zero;
+        PreviousPosition = Vector3.zero;
     }
 
     void Update() {
@@ -39,10 +40,8 @@ public class Hand : MonoBehaviour {
             CurrentCooldown = 0;
         }
 
-        // PositionList.Add((transform.position-RelativeMovementObject.transform.position));
-        // }
-        // HitVector = (transform.position-PreviousPosition).normalized;
-        // PreviousPosition = transform.position;
+        HitVector = (transform.position-PreviousPosition).normalized;
+        PreviousPosition = transform.position;
 
     }
 
@@ -50,7 +49,6 @@ public class Hand : MonoBehaviour {
         if (PositionList.Count == 0)
             return;
         if (PositionList.Count == ListLength){
-            // PositionList = PositionList.GetRange(PositionList.Count-ListLength,ListLength-1);
             Debug.Log(gameObject.name);
             Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
             Debug.Log("Average: " + CalculateAverage(PositionList));
@@ -64,10 +62,8 @@ public class Hand : MonoBehaviour {
         }
         if (other.CompareTag("Target")) {
             CurrentCooldown = AttackCooldown;
-            // float speed = CalculateAverage(PositionList);
-            float speed = Vector3.Distance(PositionList[^2],PositionList[^1]);
+            float speed = CalculateAverage(PositionList);
             if (speed >= MinSpeed) {
-                HitVector = (PositionList[PositionList.Count-1]-PositionList[PositionList.Count-2]).normalized;
                 Debug.Log("Hit: " + HitVector);
                 speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);
                 float damage = speed/MaxSpeed*MaxDamage;
