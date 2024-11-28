@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerUI : MonoBehaviour
 {
-    [SerializeField] RectTransform HealthUI;
-
+    [SerializeField] RectTransform ArmHealth;
+    [SerializeField] RectTransform AboveHeadHealth;
     private void OnEnable()
     {
         GetComponent<NetworkHealth>().HealthPoints.OnValueChanged += HealthChanged;
@@ -21,6 +21,7 @@ public class PlayerUI : MonoBehaviour
     }
     private void HealthChanged(int previousValue, int newValue)
     {
-        HealthUI.transform.localScale = new Vector3(newValue/100f, 1, 1);
+        ArmHealth.transform.localScale = new Vector3(newValue/100f, 1, 1);
+        AboveHeadHealth.transform.localScale = new Vector3(newValue / 100f, 1, 1);
     }
 }
