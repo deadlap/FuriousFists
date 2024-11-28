@@ -38,19 +38,23 @@ public class Hand : MonoBehaviour {
         } else if (CurrentCooldown < 0) {
             CurrentCooldown = 0;
         }
+
+        // PositionList.Add((transform.position-RelativeMovementObject.transform.position));
+        // }
+        // HitVector = (transform.position-PreviousPosition).normalized;
+        // PreviousPosition = transform.position;
+
+    }
+
+    void FixedUpdate(){
         if (PositionList.Count == 0)
             return;
-
-        if (PositionList.Count >= ListLength){
+        if (PositionList.Count == ListLength){
             // PositionList = PositionList.GetRange(PositionList.Count-ListLength,ListLength-1);
             Debug.Log(gameObject.name);
             Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
             Debug.Log("Average: " + CalculateAverage(PositionList));
         }
-        // PositionList.Add((transform.position-RelativeMovementObject.transform.position));
-        // }
-        // HitVector = (transform.position-PreviousPosition).normalized;
-        // PreviousPosition = transform.position;
 
     }
     
@@ -60,7 +64,8 @@ public class Hand : MonoBehaviour {
         }
         if (other.CompareTag("Target")) {
             CurrentCooldown = AttackCooldown;
-            float speed = CalculateAverage(PositionList);
+            // float speed = CalculateAverage(PositionList);
+            float speed = Vector3.Distance(PositionList[^2],PositionList[^1]);
             if (speed >= MinSpeed) {
                 HitVector = (PositionList[PositionList.Count-1]-PositionList[PositionList.Count-2]).normalized;
                 Debug.Log("Hit: " + HitVector);

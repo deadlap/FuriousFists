@@ -49,6 +49,10 @@ public class Character : MonoBehaviour {
         if (Health > MaxHealth) {
             Health = MaxHealth;
         }
+        // HitVector = (transform.position-PreviousPosition).normalized;
+        // PreviousPosition = transform.position;
+    }
+    void FixedUpdate(){
         if (LeftHand == null)
             return;
         LeftHand.PositionList.Add(LeftFakeHand.transform.localPosition);
@@ -60,10 +64,8 @@ public class Character : MonoBehaviour {
         if (RightHand.PositionList.Count > RightHand.ListLength){
             RightHand.PositionList = RightHand.PositionList.GetRange(1,RightHand.ListLength);
         }
-        // HitVector = (transform.position-PreviousPosition).normalized;
-        // PreviousPosition = transform.position;
-    }
 
+    }
     public void ApplyHit(Vector3 knockback, float damage) {
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*DamageToKnockbackRatio*damage);
