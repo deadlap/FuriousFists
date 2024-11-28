@@ -17,7 +17,10 @@ public class Hand : MonoBehaviour {
     [SerializeField] float MaxDamage;
     [SerializeField] float AttackCooldown;
     [SerializeField] float CurrentCooldown;
+    [SerializeField] GameObject RelativeMovementObject;
     UnityEngine.XR.HapticCapabilities capabilitiesL;
+    Vector3 PreviousPosition;
+    Vector3 HitVector;
 
     void Start() {
         PositionList = new List<Vector3>();
@@ -26,22 +29,29 @@ public class Hand : MonoBehaviour {
         MinSpeed = character.MinSpeed;
         MaxDamage = character.MaxDamage;
         AttackCooldown = character.AttackCooldown;
+        HitVector = Vector3.zero;
     }
 
     void Update() {
-        PositionList.Add((transform.InverseTransformPoint(Camera.main.transform.position)));
         if (CurrentCooldown > 0) {
             CurrentCooldown -= Time.deltaTime;
         } else if (CurrentCooldown < 0) {
             CurrentCooldown = 0;
         }
+        if (PositionList.Count == 0)
+            return;
 
-        if (PositionList.Count > ListLength){
-            PositionList.RemoveAt(0);
+        if (PositionList.Count >= ListLength){
+            // PositionList = PositionList.GetRange(PositionList.Count-ListLength,ListLength-1);
             Debug.Log(gameObject.name);
             Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
             Debug.Log("Average: " + CalculateAverage(PositionList));
         }
+        // PositionList.Add((transform.position-RelativeMovementObject.transform.position));
+        // }
+        // HitVector = (transform.position-PreviousPosition).normalized;
+        // PreviousPosition = transform.position;
+
     }
     
     void OnTriggerEnter(Collider other) {
@@ -52,12 +62,12 @@ public class Hand : MonoBehaviour {
             CurrentCooldown = AttackCooldown;
             float speed = CalculateAverage(PositionList);
             if (speed >= MinSpeed) {
+                HitVector = PositionList[PositionList.Count-1]-PositionList[PositionList.Count-2];
                 speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);
                 float damage = speed/MaxSpeed*MaxDamage;
-                Vector3 hitVector = PositionList[PositionList.Count-1]-PositionList[PositionList.Count-2];
-                other.gameObject.GetComponent<Target>().TakeHit(hitVector.normalized, damage);
+                other.gameObject.GetComponent<Target>().TakeHit(HitVector, damage);
+                startVibra();
             }
-            startVibra();
         }
     }
 

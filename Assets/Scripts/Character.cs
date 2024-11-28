@@ -9,11 +9,14 @@ public class Character : MonoBehaviour {
 
     [SerializeField] float MaxHealth;
     [SerializeField] float Health;
-    // [SerializeField] CharacterController PlayerCharacterController;
     [SerializeField] Rigidbody PlayerRigidbody;
     [SerializeField] GameObject OwnXROrigin;
     [SerializeField] Vector3 KnockBackVector;
     [SerializeField] float KnockbackSmoothness;
+    [SerializeField] GameObject LeftFakeHand;
+    [SerializeField] GameObject RightFakeHand;
+    [SerializeField] Hand LeftHand;
+    [SerializeField] Hand RightHand;
     
     public float AttackCooldown; //per hand.
     public float MaxKnockback;
@@ -46,6 +49,19 @@ public class Character : MonoBehaviour {
         if (Health > MaxHealth) {
             Health = MaxHealth;
         }
+        if (LeftHand == null)
+            return;
+        LeftHand.PositionList.Add(LeftFakeHand.transform.localPosition);
+        RightHand.PositionList.Add(RightFakeHand.transform.localPosition);
+        if (LeftHand.PositionList.Count > LeftHand.ListLength){
+            LeftHand.PositionList = LeftHand.PositionList.GetRange(1,LeftHand.ListLength);
+            // Debug.Log("Average: " + LeftHand.CalculateAverage(LeftHand.PositionList));
+        }
+        if (RightHand.PositionList.Count > RightHand.ListLength){
+            RightHand.PositionList = RightHand.PositionList.GetRange(1,RightHand.ListLength);
+        }
+        // HitVector = (transform.position-PreviousPosition).normalized;
+        // PreviousPosition = transform.position;
     }
 
     public void ApplyHit(Vector3 knockback, float damage) {
