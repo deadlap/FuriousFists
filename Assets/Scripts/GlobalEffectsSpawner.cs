@@ -10,10 +10,10 @@ public class GlobalEffectsSpawner : MonoBehaviour {
     void Start(){
         INSTANCE = this;
     }
-    public void SpawnBlockEffect(Vector3 Position){
-        Instantiate(BlockEffect);
-    }
-    public void SpawnHitEffect(Vector3 Position){
-        Instantiate(HitEffect);
-    }
+    // public void SpawnBlockEffect(Vector3 position){
+    //     Instantiate(BlockEffect, position, Quaternion.identity);
+    // }
+    // public void SpawnHitEffect(Vector3 position){
+    //     Instantiate(HitEffect, position, Quaternion.identity);
+    // }
 }

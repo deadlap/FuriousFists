@@ -248,6 +248,10 @@ MonoBehaviour:
   PositionList: []
   character: {fileID: 5069687924500909594}
   ListLength: 10
+  HitEffect: {fileID: 7171411769524265974, guid: 94c77f80f4f8b0c4db7a054a9295286d,
+    type: 3}
+  BlockEffect: {fileID: 6544007512587643445, guid: dbb0ef87e0aad344d98ca49c42f08c3e,
+    type: 3}
 --- !u!54 &6091904733963005450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1907,6 +1911,10 @@ MonoBehaviour:
   PositionList: []
   character: {fileID: 5069687924500909594}
   ListLength: 10
+  HitEffect: {fileID: 7171411769524265974, guid: 94c77f80f4f8b0c4db7a054a9295286d,
+    type: 3}
+  BlockEffect: {fileID: 6544007512587643445, guid: dbb0ef87e0aad344d98ca49c42f08c3e,
+    type: 3}
 --- !u!54 &1575622456738624931
 Rigidbody:
   m_ObjectHideFlags: 0

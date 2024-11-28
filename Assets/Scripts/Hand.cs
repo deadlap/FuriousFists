@@ -19,7 +19,8 @@ public class Hand : MonoBehaviour {
     UnityEngine.XR.HapticCapabilities capabilitiesL;
     Vector3 PreviousPosition;
     Vector3 HitVector;
-
+    [SerializeField] GameObject HitEffect;
+    [SerializeField] GameObject BlockEffect;
     void Start() {
         PositionList = new List<Vector3>();
         MaxSpeed = character.MaxSpeed;
@@ -67,6 +68,11 @@ public class Hand : MonoBehaviour {
                 float damage = speed/MaxSpeed*MaxDamage;
                 other.gameObject.GetComponent<Target>().TakeHit(HitVector, damage);
                 startVibra();
+            }
+            if (other.gameObject.GetComponent<Target>().DamageReduction >    0.5){
+                Instantiate(BlockEffect, transform);
+            } else {
+                Instantiate(HitEffect, transform);
             }
         }
     }

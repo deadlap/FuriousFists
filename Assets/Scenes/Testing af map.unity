@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12560818, g: 0.13167836, b: 0.117634974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -223,6 +223,54 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 13152626}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &69892863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 69892865}
+  - component: {fileID: 69892864}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &69892864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69892863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf72300491e71d42861d2c41015c205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitEffect: {fileID: 7171411769524265974, guid: 94c77f80f4f8b0c4db7a054a9295286d,
+    type: 3}
+  BlockEffect: {fileID: 6544007512587643445, guid: dbb0ef87e0aad344d98ca49c42f08c3e,
+    type: 3}
+--- !u!4 &69892865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69892863}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &78625526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,7 +1781,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 1916
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -1748,13 +1796,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.002839537, y: -0.083297126, z: 0.012934414, w: 0.9964368}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.201, y: -9.56, z: 1.504}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,6 +2305,10 @@ MonoBehaviour:
   PositionList: []
   character: {fileID: 984132338}
   ListLength: 10
+  HitEffect: {fileID: 7171411769524265974, guid: 94c77f80f4f8b0c4db7a054a9295286d,
+    type: 3}
+  BlockEffect: {fileID: 6544007512587643445, guid: dbb0ef87e0aad344d98ca49c42f08c3e,
+    type: 3}
 --- !u!114 &486247460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10417,11 +10469,11 @@ MonoBehaviour:
   RightFakeHand: {fileID: 785250520}
   LeftHand: {fileID: 1320431676}
   RightHand: {fileID: 486247459}
-  AttackCooldown: 0.5
-  MaxSpeed: 0.028
-  MinSpeed: 0.014
+  AttackCooldown: 1
+  MaxSpeed: 0.02
+  MinSpeed: 0.012
   MaxDamage: 15
-  DamageToKnockbackRatio: 25
+  DamageToKnockbackRatio: 35
 --- !u!114 &984132339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12698,6 +12750,10 @@ MonoBehaviour:
   PositionList: []
   character: {fileID: 984132338}
   ListLength: 10
+  HitEffect: {fileID: 7171411769524265974, guid: 94c77f80f4f8b0c4db7a054a9295286d,
+    type: 3}
+  BlockEffect: {fileID: 6544007512587643445, guid: dbb0ef87e0aad344d98ca49c42f08c3e,
+    type: 3}
 --- !u!54 &1320431677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18308,6 +18364,7 @@ SceneRoots:
   - {fileID: 500259087}
   - {fileID: 229773128}
   - {fileID: 1693040122}
+  - {fileID: 69892865}
   - {fileID: 1060963347}
   - {fileID: 2083793719}
   - {fileID: 543450652581714696}
