@@ -21,7 +21,7 @@ public class Character : MonoBehaviour {
     public float MaxSpeed;
     public float MinSpeed;
     public float MaxDamage;
-    public float DamageToKnockbackRatio;
+
     bool DisableInput;
     
     void Start() {
@@ -77,17 +77,11 @@ public class Character : MonoBehaviour {
 
     }
     
-    // [ClientRpc]
-    // public void ClientRpcApplyHit(Vector3 knockback, float damage, string playerID){
-    //     if (playerID == gameObject.transform.tag){
-    //         ApplyHit(knockback, damage);
-    //     }
-    // }
     public void ApplyHit(Vector3 knockback, float damage) {
         Debug.Log("hej"+ gameObject.tag);
         DisableInput = true;
         ApplyDamage(damage);
-        ApplyPureKnockBack(knockback*DamageToKnockbackRatio*damage);
+        ApplyPureKnockBack(knockback*damage);
     }
 
     void EnableMovement(){

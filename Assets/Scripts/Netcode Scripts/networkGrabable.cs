@@ -8,11 +8,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 using Unity.XR.CoreUtils;
 public class networkGrabable : NetworkBehaviour
 {
-    //Hvis folk skal samle ting op og serveren skal vide hvem der gør det (hvilken client), kunne være godt hvis man har pickups i spillet
+    //Hvis folk skal samle ting op og serveren skal vide hvem der gï¿½r det (hvilken client), kunne vï¿½re godt hvis man har pickups i spillet
 
     private NetworkObject netObject;
-
-
 
     public override void OnNetworkSpawn()
     {
@@ -30,7 +28,6 @@ public class networkGrabable : NetworkBehaviour
         if (interactorXR.gameObject == VRrigReferences.singleTon.gameObject)
         {
             var player = VRrigReferences.singleTon.localPlayer;
-            player.IncrementScore();
         }
 
     }
@@ -59,8 +56,6 @@ public class networkGrabable : NetworkBehaviour
         if (collision.gameObject.CompareTag("Player") && IsOwner)
         {
             var player = collision.gameObject.GetComponent<networkPlayer>();
-            player.IncrementScoreServerRPC();
-
         }
     }
 }

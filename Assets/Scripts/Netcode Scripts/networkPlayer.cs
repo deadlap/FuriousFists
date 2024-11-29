@@ -24,7 +24,11 @@ public class networkPlayer : NetworkBehaviour
         {
             VRrigReferences.singleTon.setNetworkPlayer(this);
         }
-        score.OnValueChanged += scoreChanged;
+        if (GetComponent<NetworkObject>().NetworkObjectId == 1){
+            SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
+        } else {
+            SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player2"));
+        }
         // DisableClientInputs();
     }
 
@@ -52,35 +56,18 @@ public class networkPlayer : NetworkBehaviour
 
         }
     }
-
-    // public void DisableClientInputs()
-    // {
-    //     if (IsClient && !IsHost)
-    //     {
-    //         var clientCamera = GetComponentInChildren<Camera>();
-
-    //         clientCamera.enabled = false;
-    //         animator.enabled = false;
-    //     }
-    // }
-
-    public void IncrementScore()
-    {
-        IncrementScoreServerRPC();
-    }
-
-    [ServerRpc]
-    public void IncrementScoreServerRPC()
-    {
-        score.Value++;
-    }
-    public void scoreChanged(int oldValue, int currentValue)
-    {
-        print(currentValue);
-    }
     public override void OnNetworkDespawn()
     {
         base.OnNetworkDespawn();
-        score.OnValueChanged -= scoreChanged;
+    }
+    private void SetGameLayerRecursive(GameObject _gameObject, int layer) {
+         _gameObject.layer = layer;
+        foreach (Transform child in _gameObject.transform) {
+                child.gameObject.layer = layer;
+
+                Transform _HasChildren = child.GetComponentInChildren<Transform>();
+                if (_HasChildren != null)
+                    SetGameLayerRecursive(child.gameObject, layer);
+            }
     }
 }

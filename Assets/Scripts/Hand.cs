@@ -14,8 +14,6 @@ public class Hand : MonoBehaviour {
     float MaxSpeed;
     float MinSpeed;
     float MaxDamage;
-    float AttackCooldown;
-    float CurrentCooldown;
     UnityEngine.XR.HapticCapabilities capabilitiesL;
     Vector3 PreviousPosition;
     Vector3 HitVector;
@@ -26,42 +24,20 @@ public class Hand : MonoBehaviour {
         MaxSpeed = character.MaxSpeed;
         MinSpeed = character.MinSpeed;
         MaxDamage = character.MaxDamage;
-        AttackCooldown = character.AttackCooldown;
         HitVector = Vector3.zero;
         PreviousPosition = Vector3.zero;
     }
 
     void Update() {
-        // if (CurrentCooldown > 0) {
-        //     CurrentCooldown -= Time.deltaTime;
-        // } else if (CurrentCooldown < 0) {
-        //     CurrentCooldown = 0;
-        // }
-
         HitVector = (transform.position-PreviousPosition).normalized;
         PreviousPosition = transform.position;
-
-    }
-
-    void FixedUpdate(){
-        // if (PositionList.Count == 0)
-        //     return;
-        // if (PositionList.Count == ListLength){
-        //     Debug.Log(gameObject.name);
-        //     Debug.Log("Distance: " + Vector3.Distance(PositionList[PositionList.Count-2],PositionList[PositionList.Count-1]));
-        //     Debug.Log("Average: " + CalculateAverage(PositionList));
-        // }
 
     }
     
     void OnTriggerEnter(Collider other) {
         Debug.Log("hit:" + other.name);
-        // if (CurrentCooldown > 0){
-        //     return;
-        // }
         if (other.CompareTag("Target")) {
-            CurrentCooldown = AttackCooldown;
-            float speed = Vector3.Distance(PositionList[^2],PositionList[^1]);
+             float speed = Vector3.Distance(PositionList[^2],PositionList[^1]);
             // CalculateAverage(PositionList);
             if (speed >= MinSpeed) {
                 Debug.Log("Hit: " + HitVector);

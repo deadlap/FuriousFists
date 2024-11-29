@@ -741,10 +741,10 @@ MonoBehaviour:
   LeftHand: {fileID: 691046808170678430}
   RightHand: {fileID: 24715339615442678}
   AttackCooldown: 2
-  MaxSpeed: 0.02
-  MinSpeed: 0.012
+  MaxSpeed: 0.03
+  MinSpeed: 0.015
   MaxDamage: 15
-  DamageToKnockbackRatio: 35
+  DamageToKnockbackRatio: 1
 --- !u!114 &640035099456005358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3976,7 +3976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.26
+  DamageReduction: 0.4
   KnockbackReduction: 0
 --- !u!65 &5327033975517531819
 BoxCollider:
@@ -4216,7 +4216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.26
+  DamageReduction: 0.4
   KnockbackReduction: 0
 --- !u!65 &9116026947901775020
 BoxCollider:
