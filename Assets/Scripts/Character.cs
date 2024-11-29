@@ -16,8 +16,8 @@ public class Character : MonoBehaviour {
     [SerializeField] GameObject RightFakeHand;
     [SerializeField] Hand LeftHand;
     [SerializeField] Hand RightHand;
-    
-    public float AttackCooldown; //per hand.
+    [SerializeField] AudioSource AudioBlock;
+    [SerializeField] AudioSource AudioHit;
     public float MaxSpeed;
     public float MinSpeed;
     public float MaxDamage;
@@ -82,6 +82,14 @@ public class Character : MonoBehaviour {
         DisableInput = true;
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*damage);
+    }
+
+    public void PlaySound(bool blocked){
+        if (blocked){
+            AudioBlock.Play(0);
+        } else {
+            AudioHit.Play(0);
+        }
     }
 
     void EnableMovement(){
