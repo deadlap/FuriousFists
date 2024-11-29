@@ -746,7 +746,7 @@ MonoBehaviour:
   AudioHit: {fileID: 8300000, guid: 31bdd59317f14004bb4a0815b9aa5746, type: 3}
   MaxSpeed: 0.022
   MinSpeed: 0.015
-  MaxDamage: 225
+  MaxDamage: 180
 --- !u!114 &640035099456005358
 MonoBehaviour:
   m_ObjectHideFlags: 0
