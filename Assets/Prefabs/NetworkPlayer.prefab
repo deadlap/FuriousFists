@@ -744,7 +744,6 @@ MonoBehaviour:
   MaxSpeed: 0.03
   MinSpeed: 0.015
   MaxDamage: 15
-  DamageToKnockbackRatio: 1
 --- !u!114 &640035099456005358
 MonoBehaviour:
   m_ObjectHideFlags: 0
