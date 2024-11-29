@@ -54,11 +54,11 @@ public class Character : MonoBehaviour {
         if (Health < 0){
             Health = 0;
         }
-        if (DisableInput) {
-            DisableInput = false;
-            Invoke("EnableMovement", 1.5f);
-            OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = false;
-        }
+        // if (DisableInput) {
+        //     DisableInput = false;
+        //     Invoke("EnableMovement", 1.5f);
+        //     OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = false;
+        // }
         // HitVector = (transform.position-PreviousPosition).normalized;
         // PreviousPosition = transform.position;
     }
