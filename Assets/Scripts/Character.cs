@@ -16,8 +16,9 @@ public class Character : MonoBehaviour {
     [SerializeField] GameObject RightFakeHand;
     [SerializeField] Hand LeftHand;
     [SerializeField] Hand RightHand;
-    [SerializeField] AudioSource AudioBlock;
-    [SerializeField] AudioSource AudioHit;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip AudioBlock;
+    [SerializeField] AudioClip AudioHit;
     public float MaxSpeed;
     public float MinSpeed;
     public float MaxDamage;
@@ -86,9 +87,9 @@ public class Character : MonoBehaviour {
 
     public void PlaySound(bool blocked){
         if (blocked){
-            AudioBlock.Play(0);
+            audioSource.PlayOneShot(AudioBlock);
         } else {
-            AudioHit.Play(0);
+            audioSource.PlayOneShot(AudioHit);
         }
     }
 
