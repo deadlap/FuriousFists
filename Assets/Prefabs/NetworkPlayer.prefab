@@ -746,7 +746,7 @@ MonoBehaviour:
   AudioHit: {fileID: 8300000, guid: 31bdd59317f14004bb4a0815b9aa5746, type: 3}
   MaxSpeed: 0.03
   MinSpeed: 0.015
-  MaxDamage: 280
+  MaxDamage: 225
 --- !u!114 &640035099456005358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,7 +1102,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7220124252314664599}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3852,7 +3852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.2
+  DamageReduction: 0.3
   KnockbackReduction: 0
 --- !u!1 &762129731145179232 stripped
 GameObject:
@@ -3894,7 +3894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 0.45
   KnockbackReduction: 0
 --- !u!1 &943861849659112876 stripped
 GameObject:
@@ -3936,7 +3936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: -0.5
+  DamageReduction: -0.25
   KnockbackReduction: 0
 --- !u!4 &1169760219992273242 stripped
 Transform:
@@ -3984,7 +3984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 0.32
   KnockbackReduction: 0
 --- !u!65 &1282209773738514709
 BoxCollider:
@@ -4074,7 +4074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.4
+  DamageReduction: 0.45
   KnockbackReduction: 0
 --- !u!65 &5327033975517531819
 BoxCollider:
@@ -4170,7 +4170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0
+  DamageReduction: 0.3
   KnockbackReduction: 0
 --- !u!65 &115937118356330378
 BoxCollider:
@@ -4239,7 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 5
   KnockbackReduction: 0
 --- !u!1 &4592590601192935220 stripped
 GameObject:
@@ -4314,7 +4314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.55
+  DamageReduction: 0.45
   KnockbackReduction: 0
 --- !u!65 &9116026947901775020
 BoxCollider:
@@ -4395,7 +4395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.28
+  DamageReduction: 0.32
   KnockbackReduction: 0
 --- !u!65 &9185172944744691010
 BoxCollider:
