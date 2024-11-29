@@ -744,7 +744,6 @@ MonoBehaviour:
   RightHand: {fileID: 24715339615442678}
   AudioBlock: {fileID: 6846290361883276317}
   AudioHit: {fileID: 6200258522478894255}
-  AttackCooldown: 2
   MaxSpeed: 0.03
   MinSpeed: 0.015
   MaxDamage: 150
@@ -3991,7 +3990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.28
+  DamageReduction: 0.55
   KnockbackReduction: 0
 --- !u!1 &943861849659112876 stripped
 GameObject:
@@ -4081,7 +4080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.28
+  DamageReduction: 0.55
   KnockbackReduction: 0
 --- !u!65 &1282209773738514709
 BoxCollider:
@@ -4336,7 +4335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.28
+  DamageReduction: 0.55
   KnockbackReduction: 0
 --- !u!1 &4592590601192935220 stripped
 GameObject:
@@ -4411,7 +4410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 5069687924500909594}
-  DamageReduction: 0.4
+  DamageReduction: 0.55
   KnockbackReduction: 0
 --- !u!65 &9116026947901775020
 BoxCollider:
