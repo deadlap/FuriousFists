@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12560818, g: 0.13167836, b: 0.117634974, a: 1}
+  m_IndirectSpecularColor: {r: 0.12560795, g: 0.13167818, b: 0.11763477, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13143,6 +13143,11 @@ MonoBehaviour:
   MaxSpeed: 3
   MinSpeed: 0
   MaxDamage: 10
+  KnockbackVector: {x: 0, y: 0, z: 0}
+  PlaySoundPosition: {x: 0, y: 0, z: 0}
+  BlockedSound: 0
+  ApplyRumbleLeft: 0
+  ApplyRumbleRight: 0
 --- !u!65 &905586683
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14810,6 +14815,11 @@ MonoBehaviour:
   MaxSpeed: 0.03
   MinSpeed: 0.015
   MaxDamage: 250
+  KnockbackVector: {x: 0, y: 0, z: 0}
+  PlaySoundPosition: {x: 0, y: 0, z: 0}
+  BlockedSound: 0
+  ApplyRumbleLeft: 0
+  ApplyRumbleRight: 0
 --- !u!114 &984132339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17128,6 +17138,7 @@ GameObject:
   - component: {fileID: 1274056317}
   - component: {fileID: 1274056316}
   - component: {fileID: 1274056315}
+  - component: {fileID: 1274056318}
   - component: {fileID: 1274056314}
   - component: {fileID: 1274056313}
   - component: {fileID: 1274056312}
@@ -17375,6 +17386,20 @@ Transform:
   - {fileID: 1222562771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274056318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274056307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebe1315453c14f4e993998b6bfa17ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerOnlineCharacter: {fileID: 0}
+  OfflineRigidbody: {fileID: 1274056309}
 --- !u!1 &1288365827
 GameObject:
   m_ObjectHideFlags: 0

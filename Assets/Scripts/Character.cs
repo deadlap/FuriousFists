@@ -23,9 +23,19 @@ public class Character : MonoBehaviour {
     public float MinSpeed;
     public float MaxDamage;
 
-    bool DisableInput;
-    
+    // Settings to be applied to the offline player
+    public Vector3 KnockbackVector;
+    public Vector3 PlaySoundPosition;
+    public bool BlockedSound;
+    public bool ApplyRumbleLeft;
+    public bool ApplyRumbleRight;
     void Start() {
+        KnockbackVector = Vector3.zero;
+        ApplyRumbleLeft = false;
+        ApplyRumbleRight = false;
+        PlaySoundPosition = Vector3.zero;
+        BlockedSound = false;
+
         Health = MaxHealth;
         if (OwnXROrigin != null) {
             PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
@@ -37,15 +47,14 @@ public class Character : MonoBehaviour {
             OwnXROrigin = GameObject.FindWithTag("Player1");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
             PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
-            // SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player1"));
         } else {
             if (GameObject.FindWithTag("Player2") == null)
                 return;
             OwnXROrigin = GameObject.FindWithTag("Player2");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player2"));
             PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
-            // SetGameLayerRecursive(OwnXROrigin, LayerMask.NameToLayer("Player2"));
         }
+        OwnXROrigin.gameObject.GetComponent<OfflineCharacterManager>().PlayerOnlineCharacter = this;
     }
 
     void Update() {
@@ -55,13 +64,6 @@ public class Character : MonoBehaviour {
         if (Health < 0){
             Health = 0;
         }
-        // if (DisableInput) {
-        //     DisableInput = false;
-        //     Invoke("EnableMovement", 1.5f);
-        //     OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = false;
-        // }
-        // HitVector = (transform.position-PreviousPosition).normalized;
-        // PreviousPosition = transform.position;
     }
     void FixedUpdate(){
         if (LeftHand == null)
@@ -70,7 +72,6 @@ public class Character : MonoBehaviour {
         RightHand.PositionList.Add(RightFakeHand.transform.localPosition);
         if (LeftHand.PositionList.Count > LeftHand.ListLength){
             LeftHand.PositionList = LeftHand.PositionList.GetRange(1,LeftHand.ListLength);
-            // Debug.Log("Average: " + LeftHand.CalculateAverage(LeftHand.PositionList));
         }
         if (RightHand.PositionList.Count > RightHand.ListLength){
             RightHand.PositionList = RightHand.PositionList.GetRange(1,RightHand.ListLength);
@@ -79,8 +80,6 @@ public class Character : MonoBehaviour {
     }
     
     public void ApplyHit(Vector3 knockback, float damage) {
-        Debug.Log("hej"+ gameObject.tag);
-        DisableInput = true;
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*damage);
     }
@@ -93,18 +92,14 @@ public class Character : MonoBehaviour {
         }
     }
 
-    void EnableMovement(){
-        OwnXROrigin.GetComponent<DynamicMoveProvider>().enabled = true;
-    }
-
     public void ApplyPureKnockBack(Vector3 knockback) {
-        Debug.Log("hit: "+ knockback);
-        PlayerRigidbody.AddForce(knockback);
+        KnockbackVector = knockback;
     }
 
     public void ApplyDamage(float damage){
         // Health -= damage;
     }
+
     private void SetGameLayerRecursive(GameObject _gameObject, int layer) {
          _gameObject.layer = layer;
         foreach (Transform child in _gameObject.transform) {

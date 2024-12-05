@@ -44,7 +44,6 @@ public class Hand : MonoBehaviour {
                 speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);
                 float damage = speed/MaxSpeed*MaxDamage;
                 other.gameObject.GetComponent<Target>().TakeHit(HitVector, damage);
-                startVibra();
             }
             if (other.gameObject.GetComponent<Target>().DamageReduction > 0.2){
                 Instantiate(BlockEffect, transform);
@@ -60,18 +59,5 @@ public class Hand : MonoBehaviour {
             sum += Vector3.Distance(list[i-1],list[i]);
         }
         return (sum/(float)(list.Count-1));
-    }
-    public void startVibra()
-    {
-        InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).TryGetHapticCapabilities(out capabilitiesL);
-        InputDevices.GetDeviceAtXRNode(XRNode.RightHand).TryGetHapticCapabilities(out capabilitiesL);
-        if (capabilitiesL.supportsImpulse)
-        {
-            uint channel = 0;
-            float amplitude = 0.5f;
-            float duration = 0.4f;
-            InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).SendHapticImpulse(channel, amplitude, duration);
-            InputDevices.GetDeviceAtXRNode(XRNode.RightHand).SendHapticImpulse(channel, amplitude, duration);
-        }
     }
 }

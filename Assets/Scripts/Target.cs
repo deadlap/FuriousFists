@@ -16,8 +16,6 @@ public class Target : MonoBehaviour {
 
     public void TakeHit(Vector3 knockback, float damage){
         if (character != null) {
-            // TakeHit(knockback);
-            // TakeHit(damage);
             character.ApplyHit(knockback*(1-KnockbackReduction), damage*(1-DamageReduction));
         }
     }
