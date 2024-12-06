@@ -13,6 +13,8 @@ public class OfflineCharacterManager : MonoBehaviour {
     // [SerializeField] GameObject AudioHitPrefab;
 
     void Update() {
+        if (PlayerOnlineCharacter == null)
+            return;
         // if (PlayerOnlineCharacter.PlaySoundPosition != Vector3.zero) {
         //     PlaySound(PlayerOnlineCharacter.BlockedSound);        
         //     PlayerOnlineCharacter.PlaySoundPosition = Vector3.zero;
