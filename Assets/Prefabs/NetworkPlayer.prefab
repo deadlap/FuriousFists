@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 24715339615442678}
   - component: {fileID: 6091904733963005450}
   m_Layer: 0
-  m_Name: Hand
+  m_Name: RightHand
   m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,18 +735,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   Health: 100
-  PlayerRigidbody: {fileID: 0}
   OwnXROrigin: {fileID: 0}
   LeftFakeHand: {fileID: 7558233190877736698}
   RightFakeHand: {fileID: 1391745987713935143}
   LeftHand: {fileID: 691046808170678430}
   RightHand: {fileID: 24715339615442678}
-  audioSource: {fileID: 6846290361883276317}
-  AudioBlock: {fileID: 8300000, guid: eda55b4d946b75f4cbd402915dc7c2d3, type: 3}
-  AudioHit: {fileID: 8300000, guid: 31bdd59317f14004bb4a0815b9aa5746, type: 3}
   MaxSpeed: 0.022
   MinSpeed: 0.015
-  MaxDamage: 180
+  MaxDamage: 450
+  KnockbackVector: {x: 0, y: 0, z: 0}
+  ApplyRumbleLeft: 0
+  ApplyRumbleRight: 0
 --- !u!114 &640035099456005358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,7 +1412,7 @@ GameObject:
   - component: {fileID: 691046808170678430}
   - component: {fileID: 1575622456738624931}
   m_Layer: 0
-  m_Name: Hand
+  m_Name: LeftHand
   m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

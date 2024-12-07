@@ -18,11 +18,6 @@ public class OfflineCharacterManager : MonoBehaviour {
     void Update() {
         if (!IsOnline)
             return;
-        // if (PlayerOnlineCharacter.PlaySoundPosition != Vector3.zero) {
-        //     PlaySound(PlayerOnlineCharacter.BlockedSound);        
-        //     PlayerOnlineCharacter.PlaySoundPosition = Vector3.zero;
-        //     PlayerOnlineCharacter.BlockedSound = false;
-        // }
         if (PlayerOnlineCharacter.ApplyRumbleLeft) {
             StartVibration(false);
             PlayerOnlineCharacter.ApplyRumbleLeft = false;
@@ -31,19 +26,9 @@ public class OfflineCharacterManager : MonoBehaviour {
             StartVibration(true);
             PlayerOnlineCharacter.ApplyRumbleRight = false;
         }
-        // if (PlayerOnlineCharacter.KnockbackVector != Vector3.zero){
         OfflineRigidbody.AddForce(PlayerOnlineCharacter.KnockbackVector);
         PlayerOnlineCharacter.KnockbackVector = Vector3.zero;
-        // }
     }
-
-    // public void PlaySound(bool blocked){
-    //     if (blocked){
-    //         Instantiate(AudioBlockPrefab, PlayerOnlineCharacter.PlaySoundPosition, Quaternion.identity);
-    //     } else {
-    //         Instantiate(AudioHitPrefab, PlayerOnlineCharacter.PlaySoundPosition, Quaternion.identity);
-    //     }
-    // }
     public void GoOnline(){
         IsOnline = true;
     }
@@ -59,7 +44,6 @@ public class OfflineCharacterManager : MonoBehaviour {
             } else {
                 InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).SendHapticImpulse(channel, amplitude, duration);
             }
-
         }
     }
 }

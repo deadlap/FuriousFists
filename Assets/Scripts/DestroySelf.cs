@@ -7,9 +7,6 @@ public class DestroySelf : MonoBehaviour {
     void Start(){
         Invoke("DeleteMe",0.5f);
     }
-
-    // Update is called once per frame
-
     void DeleteMe(){
         Destroy(gameObject);
     }

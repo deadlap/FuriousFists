@@ -34,25 +34,22 @@ public class Hand : MonoBehaviour {
     }
     
     void OnTriggerEnter(Collider other) {
-        Debug.Log("hit:" + other.name);
         if (other.CompareTag("Target")) {
              float speed = Vector3.Distance(PositionList[^2],PositionList[^1]);
-            // CalculateAverage(PositionList);
             if (speed >= MinSpeed) {
-                Debug.Log("Hit: " + HitVector);
                 speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);
                 float damage = speed/MaxSpeed*MaxDamage;
                 other.gameObject.GetComponent<Target>().TakeHit(HitVector, damage);
-            }
-            if (other.gameObject.GetComponent<Target>().DamageReduction > 0.2){
-                Instantiate(BlockEffect, transform);
-            } else {
-                Instantiate(HitEffect, transform);
-            }
-            if (transform.name == "mixamorig1:RightHand"){
-                character.ApplyRumbleRight = true;
-            } else {
-                character.ApplyRumbleLeft = true;
+                if (other.gameObject.GetComponent<Target>().DamageReduction > 0.2){
+                    Instantiate(BlockEffect, transform);
+                } else {
+                    Instantiate(HitEffect, transform);
+                }
+                if (transform.name == "RightHand"){
+                    character.ApplyRumbleRight = true;
+                } else if (transform.name == "LeftHand"){
+                    character.ApplyRumbleLeft = true;
+                }
             }
         }
     }

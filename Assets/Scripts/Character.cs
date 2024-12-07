@@ -10,35 +10,29 @@ public class Character : MonoBehaviour {
 
     [SerializeField] public float MaxHealth;
     [SerializeField] public float Health;
-    [SerializeField] Rigidbody PlayerRigidbody;
     [SerializeField] GameObject OwnXROrigin;
     [SerializeField] GameObject LeftFakeHand;
     [SerializeField] GameObject RightFakeHand;
     [SerializeField] Hand LeftHand;
     [SerializeField] Hand RightHand;
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip AudioBlock;
-    [SerializeField] AudioClip AudioHit;
+    // [SerializeField] AudioSource audioSource;
+    // [SerializeField] AudioClip AudioBlock;
+    // [SerializeField] AudioClip AudioHit;
     public float MaxSpeed;
     public float MinSpeed;
     public float MaxDamage;
 
     // Settings to be applied to the offline player
     public Vector3 KnockbackVector;
-    // public Vector3 PlaySoundPosition;
-    // public bool BlockedSound;
     public bool ApplyRumbleLeft;
     public bool ApplyRumbleRight;
     void Start() {
         KnockbackVector = Vector3.zero;
         ApplyRumbleLeft = false;
         ApplyRumbleRight = false;
-        // PlaySoundPosition = Vector3.zero;
-        // BlockedSound = false;
 
         Health = MaxHealth;
         if (OwnXROrigin != null) {
-            PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
             return;
         }
         if (GetComponent<NetworkObject>().NetworkObjectId == 1){
@@ -46,13 +40,11 @@ public class Character : MonoBehaviour {
                 return;
             OwnXROrigin = GameObject.FindWithTag("Player1");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player1"));
-            PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
         } else {
             if (GameObject.FindWithTag("Player2") == null)
                 return;
             OwnXROrigin = GameObject.FindWithTag("Player2");
             SetGameLayerRecursive(gameObject, LayerMask.NameToLayer("Player2"));
-            PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
         }
         OwnXROrigin.gameObject.GetComponent<OfflineCharacterManager>().PlayerOnlineCharacter = this;
         OwnXROrigin.gameObject.GetComponent<OfflineCharacterManager>().GoOnline();
@@ -81,19 +73,18 @@ public class Character : MonoBehaviour {
     }
     
     public void ApplyHit(Vector3 knockback, float damage) {
-        ApplyDamage(damage);
         ApplyPureKnockBack(knockback*damage);
         ApplyRumbleLeft = true;
         ApplyRumbleRight = true;
     }
 
-    public void PlaySound(bool blocked){
-        if (blocked){
-            audioSource.PlayOneShot(AudioBlock);
-        } else {
-            audioSource.PlayOneShot(AudioHit);
-        }
-    }
+    // public void PlaySound(bool blocked){
+    //     if (blocked){
+    //         audioSource.PlayOneShot(AudioBlock);
+    //     } else {
+    //         audioSource.PlayOneShot(AudioHit);
+    //     }
+    // }
 
     public void ApplyPureKnockBack(Vector3 knockback) {
         KnockbackVector += knockback;
