@@ -11,9 +11,12 @@ public class OfflineCharacterManager : MonoBehaviour {
     [SerializeField] Rigidbody OfflineRigidbody;
     // [SerializeField] GameObject AudioBlockPrefab;
     // [SerializeField] GameObject AudioHitPrefab;
-
+    public bool IsOnline;
+    void Start(){
+        IsOnline = false;
+    }
     void Update() {
-        if (PlayerOnlineCharacter == null)
+        if (!IsOnline)
             return;
         // if (PlayerOnlineCharacter.PlaySoundPosition != Vector3.zero) {
         //     PlaySound(PlayerOnlineCharacter.BlockedSound);        
@@ -23,15 +26,15 @@ public class OfflineCharacterManager : MonoBehaviour {
         if (PlayerOnlineCharacter.ApplyRumbleLeft) {
             StartVibration(false);
             PlayerOnlineCharacter.ApplyRumbleLeft = false;
-        } 
+        }
         if (PlayerOnlineCharacter.ApplyRumbleRight) {
             StartVibration(true);
             PlayerOnlineCharacter.ApplyRumbleRight = false;
         }
-        if (PlayerOnlineCharacter.KnockbackVector != Vector3.zero){
-            OfflineRigidbody.AddForce(PlayerOnlineCharacter.KnockbackVector);
-            PlayerOnlineCharacter.KnockbackVector = Vector3.zero;
-        }
+        // if (PlayerOnlineCharacter.KnockbackVector != Vector3.zero){
+        OfflineRigidbody.AddForce(PlayerOnlineCharacter.KnockbackVector);
+        PlayerOnlineCharacter.KnockbackVector = Vector3.zero;
+        // }
     }
 
     // public void PlaySound(bool blocked){
@@ -41,7 +44,9 @@ public class OfflineCharacterManager : MonoBehaviour {
     //         Instantiate(AudioHitPrefab, PlayerOnlineCharacter.PlaySoundPosition, Quaternion.identity);
     //     }
     // }
-
+    public void GoOnline(){
+        IsOnline = true;
+    }
     public void StartVibration(bool right) {
         InputDevices.GetDeviceAtXRNode(XRNode.LeftHand).TryGetHapticCapabilities(out capabilitiesL);
         InputDevices.GetDeviceAtXRNode(XRNode.RightHand).TryGetHapticCapabilities(out capabilitiesL);

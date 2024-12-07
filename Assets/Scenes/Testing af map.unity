@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12560795, g: 0.13167818, b: 0.11763477, a: 1}
+  m_IndirectSpecularColor: {r: 0.12560818, g: 0.13167836, b: 0.117634974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13144,8 +13144,6 @@ MonoBehaviour:
   MinSpeed: 0
   MaxDamage: 10
   KnockbackVector: {x: 0, y: 0, z: 0}
-  PlaySoundPosition: {x: 0, y: 0, z: 0}
-  BlockedSound: 0
   ApplyRumbleLeft: 0
   ApplyRumbleRight: 0
 --- !u!65 &905586683
@@ -14816,8 +14814,6 @@ MonoBehaviour:
   MinSpeed: 0.015
   MaxDamage: 250
   KnockbackVector: {x: 0, y: 0, z: 0}
-  PlaySoundPosition: {x: 0, y: 0, z: 0}
-  BlockedSound: 0
   ApplyRumbleLeft: 0
   ApplyRumbleRight: 0
 --- !u!114 &984132339
@@ -17400,6 +17396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerOnlineCharacter: {fileID: 0}
   OfflineRigidbody: {fileID: 1274056309}
+  IsOnline: 0
 --- !u!1 &1288365827
 GameObject:
   m_ObjectHideFlags: 0

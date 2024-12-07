@@ -25,16 +25,16 @@ public class Character : MonoBehaviour {
 
     // Settings to be applied to the offline player
     public Vector3 KnockbackVector;
-    public Vector3 PlaySoundPosition;
-    public bool BlockedSound;
+    // public Vector3 PlaySoundPosition;
+    // public bool BlockedSound;
     public bool ApplyRumbleLeft;
     public bool ApplyRumbleRight;
     void Start() {
         KnockbackVector = Vector3.zero;
         ApplyRumbleLeft = false;
         ApplyRumbleRight = false;
-        PlaySoundPosition = Vector3.zero;
-        BlockedSound = false;
+        // PlaySoundPosition = Vector3.zero;
+        // BlockedSound = false;
 
         Health = MaxHealth;
         if (OwnXROrigin != null) {
@@ -55,6 +55,7 @@ public class Character : MonoBehaviour {
             PlayerRigidbody = OwnXROrigin.GetComponent<Rigidbody>();
         }
         OwnXROrigin.gameObject.GetComponent<OfflineCharacterManager>().PlayerOnlineCharacter = this;
+        OwnXROrigin.gameObject.GetComponent<OfflineCharacterManager>().GoOnline();
     }
 
     void Update() {
@@ -82,6 +83,8 @@ public class Character : MonoBehaviour {
     public void ApplyHit(Vector3 knockback, float damage) {
         ApplyDamage(damage);
         ApplyPureKnockBack(knockback*damage);
+        ApplyRumbleLeft = true;
+        ApplyRumbleRight = true;
     }
 
     public void PlaySound(bool blocked){
@@ -93,7 +96,7 @@ public class Character : MonoBehaviour {
     }
 
     public void ApplyPureKnockBack(Vector3 knockback) {
-        KnockbackVector = knockback;
+        KnockbackVector += knockback;
     }
 
     public void ApplyDamage(float damage){

@@ -31,7 +31,6 @@ public class Hand : MonoBehaviour {
     void Update() {
         HitVector = (transform.position-PreviousPosition).normalized;
         PreviousPosition = transform.position;
-
     }
     
     void OnTriggerEnter(Collider other) {
@@ -49,6 +48,11 @@ public class Hand : MonoBehaviour {
                 Instantiate(BlockEffect, transform);
             } else {
                 Instantiate(HitEffect, transform);
+            }
+            if (transform.name == "mixamorig1:RightHand"){
+                character.ApplyRumbleRight = true;
+            } else {
+                character.ApplyRumbleLeft = true;
             }
         }
     }
