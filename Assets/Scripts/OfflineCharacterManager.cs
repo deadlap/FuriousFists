@@ -9,8 +9,7 @@ public class OfflineCharacterManager : MonoBehaviour {
     UnityEngine.XR.HapticCapabilities capabilitiesL;
     [SerializeField] public Character PlayerOnlineCharacter;
     [SerializeField] Rigidbody OfflineRigidbody;
-    // [SerializeField] GameObject AudioBlockPrefab;
-    // [SerializeField] GameObject AudioHitPrefab;
+
     public bool IsOnline;
     void Start(){
         IsOnline = false;

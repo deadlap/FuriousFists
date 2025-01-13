@@ -14,8 +14,8 @@ public class Hand : MonoBehaviour {
     float MaxSpeed;
     float MinSpeed;
     float MaxDamage;
-    UnityEngine.XR.HapticCapabilities capabilitiesL;
-    Vector3 PreviousPosition;
+    float BlockThreshold;
+    Vector3 PreviousPosition; //A list of positions the hand has had within the last x frames. Relative to its parent.
     Vector3 HitVector;
     [SerializeField] GameObject HitEffect;
     [SerializeField] GameObject BlockEffect;
@@ -26,6 +26,7 @@ public class Hand : MonoBehaviour {
         MaxDamage = character.MaxDamage;
         HitVector = Vector3.zero;
         PreviousPosition = Vector3.zero;
+        BlockThreshold = 0.2f;
     }
 
     void Update() {
@@ -35,16 +36,22 @@ public class Hand : MonoBehaviour {
     
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Target")) {
-             float speed = Vector3.Distance(PositionList[^2],PositionList[^1]);
+            //check the distance between the current and previous position of the hand
+            // Not technically speed, since time has not been included.
+            float speed = Vector3.Distance(PositionList[^2],PositionList[^1]); 
+            
+            // Is the fist moving fast enough to be a punch?
             if (speed >= MinSpeed) {
                 speed = Mathf.Clamp(speed, MinSpeed, MaxSpeed);
                 float damage = speed/MaxSpeed*MaxDamage;
                 other.gameObject.GetComponent<Target>().TakeHit(HitVector, damage);
-                if (other.gameObject.GetComponent<Target>().DamageReduction > 0.2){
+                // Does the attack count as a "hit" or a "block"?
+                if (other.gameObject.GetComponent<Target>().DamageReduction > BlockThreshold){
                     Instantiate(BlockEffect, transform);
                 } else {
                     Instantiate(HitEffect, transform);
                 }
+                //Which hand are we punching with?
                 if (transform.name == "RightHand"){
                     character.ApplyRumbleRight = true;
                 } else if (transform.name == "LeftHand"){
@@ -52,13 +59,5 @@ public class Hand : MonoBehaviour {
                 }
             }
         }
-    }
-
-    float CalculateAverage(List<Vector3> list){
-        float sum = 0;
-        for (int i = 1; i < list.Count; i++) {
-            sum += Vector3.Distance(list[i-1],list[i]);
-        }
-        return (sum/(float)(list.Count-1));
     }
 }

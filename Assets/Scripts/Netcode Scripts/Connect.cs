@@ -55,14 +55,6 @@ public class Connect : MonoBehaviour
         Debug.Log($"Signed in. Player ID: {playerId}");
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     public async void startHost()
     {
         Debug.Log("Host - Creating an allocation.");

@@ -10,12 +10,6 @@ public class networkPlayer : NetworkBehaviour
     [SerializeField] private Transform head;
     [SerializeField] private Transform lHand;
     [SerializeField] private Transform rHand;
-    [SerializeField] private Animator animator;
-
-    private NetworkVariable<int> score = new NetworkVariable<int>();
-
-
-
 
     public override void OnNetworkSpawn()
     {

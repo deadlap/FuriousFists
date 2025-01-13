@@ -8,16 +8,14 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class Character : MonoBehaviour {
 
-    [SerializeField] public float MaxHealth;
-    [SerializeField] public float Health;
+    // [SerializeField] public float MaxHealth;
+    // [SerializeField] public float Health;
     [SerializeField] GameObject OwnXROrigin;
     [SerializeField] GameObject LeftFakeHand;
     [SerializeField] GameObject RightFakeHand;
     [SerializeField] Hand LeftHand;
     [SerializeField] Hand RightHand;
-    // [SerializeField] AudioSource audioSource;
-    // [SerializeField] AudioClip AudioBlock;
-    // [SerializeField] AudioClip AudioHit;
+
     public float MaxSpeed;
     public float MinSpeed;
     public float MaxDamage;
@@ -31,7 +29,6 @@ public class Character : MonoBehaviour {
         ApplyRumbleLeft = false;
         ApplyRumbleRight = false;
 
-        Health = MaxHealth;
         if (OwnXROrigin != null) {
             return;
         }
@@ -49,15 +46,6 @@ public class Character : MonoBehaviour {
         OwnXROrigin.gameObject.GetComponent<OfflineCharacterManager>().PlayerOnlineCharacter = this;
         OwnXROrigin.gameObject.GetComponent<OfflineCharacterManager>().GoOnline();
     }
-
-    void Update() {
-        if (Health > MaxHealth) {
-            Health = MaxHealth;
-        }
-        if (Health < 0){
-            Health = 0;
-        }
-    }
     void FixedUpdate(){
         if (LeftHand == null)
             return;
@@ -69,7 +57,6 @@ public class Character : MonoBehaviour {
         if (RightHand.PositionList.Count > RightHand.ListLength){
             RightHand.PositionList = RightHand.PositionList.GetRange(1,RightHand.ListLength);
         }
-
     }
     
     public void ApplyHit(Vector3 knockback, float damage) {
@@ -78,21 +65,13 @@ public class Character : MonoBehaviour {
         ApplyRumbleRight = true;
     }
 
-    // public void PlaySound(bool blocked){
-    //     if (blocked){
-    //         audioSource.PlayOneShot(AudioBlock);
-    //     } else {
-    //         audioSource.PlayOneShot(AudioHit);
-    //     }
-    // }
-
     public void ApplyPureKnockBack(Vector3 knockback) {
         KnockbackVector += knockback;
     }
 
-    public void ApplyDamage(float damage){
+    // public void ApplyDamage(float damage){
         // Health -= damage;
-    }
+    // }
 
     private void SetGameLayerRecursive(GameObject _gameObject, int layer) {
          _gameObject.layer = layer;
